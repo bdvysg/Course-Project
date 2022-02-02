@@ -2126,6 +2126,7 @@ object Form2: TForm2
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF
     FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF}
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 120
   TextHeight = 16
   object PageControl1: TPageControl
@@ -2137,18 +2138,47 @@ object Form2: TForm2
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = 'TabSheet1'
+      object Button2: TButton
+        Left = 248
+        Top = 200
+        Width = 75
+        Height = 25
+        Caption = 'Button2'
+        TabOrder = 0
+      end
     end
     object TabSheet2: TTabSheet
       Caption = 'TabSheet2'
       ImageIndex = 1
+      object Label1: TLabel
+        Left = 240
+        Top = 208
+        Width = 37
+        Height = 16
+        Caption = 'Label1'
+      end
     end
     object TabSheet3: TTabSheet
       Caption = 'TabSheet3'
       ImageIndex = 2
+      object Label2: TLabel
+        Left = 344
+        Top = 136
+        Width = 37
+        Height = 16
+        Caption = 'Label2'
+      end
     end
     object TabSheet4: TTabSheet
       Caption = 'TabSheet4'
       ImageIndex = 3
+      object Label3: TLabel
+        Left = 224
+        Top = 136
+        Width = 37
+        Height = 16
+        Caption = 'Label3'
+      end
     end
   end
   object Button1: TButton
