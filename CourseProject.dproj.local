@@ -1,11 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
-  <Transactions>
-    <Transaction>2022.02.02 22:51:26.598,=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022.02.02 23:06:48.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
-    <Transaction>2022.02.02 23:06:48.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>2022.02.02 23:08:14.394,C:\Users\bdvys\Desktop\CourseProject\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas</Transaction>
-    <Transaction>2022.02.02 23:08:14.394,C:\Users\bdvys\Desktop\CourseProject\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm</Transaction>
-    <Transaction>2022.02.02 23:08:32.626,C:\Users\bdvys\Desktop\CourseProject\CourseProject.dproj=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+	<Transactions>
+    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Desktop\CourseProject\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.598,=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.626,C:\Users\bdvys\Desktop\CourseProject\CourseProject.dproj=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Desktop\CourseProject\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm</Transaction>
   </Transactions>
 </BorlandProject>
