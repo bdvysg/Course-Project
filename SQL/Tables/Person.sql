@@ -1,5 +1,5 @@
 CREATE TABLE Person(
-  Pe_Id smallint NOT NULL,
+  Pe_Id smallint IDENTITY(1,1) NOT NULL,
   Pe_Name varchar(70) NULL,
   Pe_SurName varchar(70) NULL,
   Pe_FatherName varchar(70) NULL,
@@ -12,4 +12,10 @@ CREATE TABLE Person(
   
   CONSTRAINT PK_Person PRIMARY KEY (Pe_Id)
 )
+GO
+
+ALTER TABLE Person
+ADD
+  CONSTRAINT FK_PlaceOfWork FOREIGN KEY (Pe_PlaceOfWork) REFERENCES Place(Pl_Id),
+  Pe_Photo varbinary(max) NULL
 GO
