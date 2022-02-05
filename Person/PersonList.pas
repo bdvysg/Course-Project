@@ -16,6 +16,7 @@ type
     some1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure some1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,11 +30,16 @@ implementation
 
 {$R *.dfm}
 
+
+procedure TForm1.some1Click(Sender: TObject);
+begin
+  ADOQuery1.Refresh;
+end;
+
 procedure TForm1.DBGrid1CellClick(Column: TColumn);
 begin
   Form3 := TForm3.Create(Self);
   Form3.ViewPersonEdit(DBGrid1.Fields[0].Value);
-
 end;
 
 procedure TForm1.FormCreate(Sender: TObject);

@@ -62,7 +62,8 @@ object Form1: TForm1
     Left = 248
     Top = 248
     object some1: TMenuItem
-      Caption = 'some'
+      Caption = #1054#1085#1086#1074#1080#1090#1080
+      OnClick = some1Click
     end
   end
   object DataSource1: TDataSource

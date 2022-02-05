@@ -1,32 +1,35 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <BorlandProject>
 	<Transactions>
-    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm=C:\Users\bdvys\Desktop\CourseProject\main.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.626,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Project1.dproj=C:\Users\bdvys\Desktop\CourseProject\CourseProject.dproj</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Unit3.dfm=C:\Users\bdvys\Desktop\CourseProject\Person\PersonEdit.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Unit3.pas=C:\Users\bdvys\Desktop\CourseProject\Person\PersonEdit.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.326,=C:\Users\bdvys\Desktop\CourseProject\Unit3.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Person\PersonList.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.668,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.480,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.108,C:\Users\bdvys\Desktop\CourseProject\Unit1.pas=C:\Users\bdvys\Desktop\CourseProject\DataModule.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Unit1.pas=C:\Users\bdvys\Desktop\CourseProject\Person\PersonList.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Person\PersonEdit.pas=C:\Users\bdvys\Desktop\CourseProject\Unit3.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.572,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.039,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm=C:\Users\bdvys\Desktop\CourseProject\Person\PersonList.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.108,C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm=C:\Users\bdvys\Desktop\CourseProject\DataModule.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.187,C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm=C:\Users\bdvys\Desktop\CourseProject\Module.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Person\PersonEdit.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit3.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.947,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.187,C:\Users\bdvys\Desktop\CourseProject\Unit1.pas=C:\Users\bdvys\Desktop\CourseProject\Module.pas</Transaction>
     <Transaction>1899.12.30 00:00:00.000.598,=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas=C:\Users\bdvys\Desktop\CourseProject\main.pas</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm</Transaction>
-    <Transaction>1899.12.30 00:00:00.000.396,C:\Users\bdvys\Desktop\CourseProject\Person\PersonList.pas=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 16:40:42.998,=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
-    <Transaction>2022.02.05 16:41:21.668,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 16:52:18.447,=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
-    <Transaction>2022.02.05 16:54:34.683,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
-    <Transaction>2022.02.05 16:54:34.683,C:\Users\bdvys\Desktop\CourseProject\DataModule.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit4.dfm</Transaction>
-    <Transaction>2022.02.05 17:00:38.543,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=</Transaction>
-    <Transaction>2022.02.05 17:00:56.480,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 17:02:45.108,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 17:02:45.108,C:\Users\bdvys\Desktop\CourseProject\DataModule.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm</Transaction>
-    <Transaction>2022.02.05 17:07:07.358,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=</Transaction>
-    <Transaction>2022.02.05 17:07:26.947,=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 17:08:39.187,C:\Users\bdvys\Desktop\CourseProject\Module.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit1.dfm</Transaction>
-    <Transaction>2022.02.05 17:08:39.187,C:\Users\bdvys\Desktop\CourseProject\Module.pas=C:\Users\bdvys\Desktop\CourseProject\Unit1.pas</Transaction>
-    <Transaction>2022.02.05 17:30:21.207,C:\Users\bdvys\Desktop\CourseProject\Module.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.683,C:\Users\bdvys\Desktop\CourseProject\Unit4.pas=C:\Users\bdvys\Desktop\CourseProject\DataModule.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.683,C:\Users\bdvys\Desktop\CourseProject\Unit4.dfm=C:\Users\bdvys\Desktop\CourseProject\DataModule.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.207,C:\Users\bdvys\Desktop\CourseProject\Module.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Desktop\CourseProject\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.998,=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.447,=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.543,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.151,C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.dfm=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Unit2.dfm</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.626,C:\Users\bdvys\Desktop\CourseProject\CourseProject.dproj=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\Project1.dproj</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.394,C:\Users\bdvys\Desktop\CourseProject\main.pas=C:\Users\bdvys\Documents\Embarcadero\Studio\Projects\main.pas</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.358,C:\Users\bdvys\Desktop\CourseProject\DataModule.pas=</Transaction>
+    <Transaction>1899.12.30 00:00:00.000.326,=C:\Users\bdvys\Desktop\CourseProject\Unit3.pas</Transaction>
+    <Transaction>2022.02.05 21:28:51.105,=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
+    <Transaction>2022.02.05 21:35:03.455,C:\Users\bdvys\Desktop\CourseProject\Person\EditWage.pas=C:\Users\bdvys\Desktop\CourseProject\Unit4.pas</Transaction>
+    <Transaction>2022.02.05 21:35:03.455,C:\Users\bdvys\Desktop\CourseProject\Person\EditWage.dfm=C:\Users\bdvys\Desktop\CourseProject\Unit4.dfm</Transaction>
   </Transactions>
 </BorlandProject>

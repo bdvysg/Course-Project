@@ -83,6 +83,7 @@ begin
   TabSheet3.TabVisible := False;
   TabSheet4.TabVisible := False;
   PageControl1.ActivePageIndex := 0;
+  Application.Icon.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\shop48.ico');
 end;
 
 end.
