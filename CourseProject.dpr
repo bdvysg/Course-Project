@@ -2,7 +2,9 @@ program CourseProject;
 
 uses
   Vcl.Forms,
-  main in 'main.pas' {Form2};
+  main in 'main.pas' {Form2},
+  PersonList in 'Person\PersonList.pas' {Form1},
+  PersonEdit in 'Person\PersonEdit.pas' {Form3};
 
 {$R *.res}
 
