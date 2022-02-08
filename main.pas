@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList;
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList, ChangePlace;
 
 type
   TForm2 = class(TForm)
@@ -25,6 +25,7 @@ type
     Image1: TImage;
     Button1: TButton;
     Button2: TButton;
+    Button3: TButton;
     procedure MainBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EmployeeBtnClick(Sender: TObject);
@@ -32,6 +33,7 @@ type
     procedure MagazBtnClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -69,6 +71,12 @@ procedure TForm2.Button2Click(Sender: TObject);
 begin
   Form1 := TForm1.Create(Self);
   Form1.Show;
+end;
+
+procedure TForm2.Button3Click(Sender: TObject);
+begin
+  Form5 := TForm5.Create(Application.MainForm);
+  Form5.Show;
 end;
 
 procedure TForm2.EmployeeBtnClick(Sender: TObject);

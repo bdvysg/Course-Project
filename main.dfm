@@ -19,7 +19,7 @@ object Form2: TForm2
     Top = 8
     Width = 740
     Height = 625
-    ActivePage = TabSheet1
+    ActivePage = TabSheet2
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -1772,6 +1772,15 @@ object Form2: TForm2
         Caption = #1057#1087#1080#1089#1086#1082' '#1074#1089#1110#1093' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1110#1074
         TabOrder = 0
         OnClick = Button2Click
+      end
+      object Button3: TButton
+        Left = 16
+        Top = 104
+        Width = 153
+        Height = 25
+        Caption = #1047#1084#1110#1085#1080#1090#1080' '#1084#1110#1089#1094#1077' '#1088#1086#1073#1086#1090#1080
+        TabOrder = 1
+        OnClick = Button3Click
       end
     end
     object TabSheet3: TTabSheet
