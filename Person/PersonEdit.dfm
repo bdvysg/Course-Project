@@ -162,7 +162,7 @@ object Form3: TForm3
     Left = 256
     Top = 16
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_Id'
     DataSource = DataSource1
     TabOrder = 0
@@ -171,7 +171,7 @@ object Form3: TForm3
     Left = 256
     Top = 50
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_SurName'
     DataSource = DataSource1
     TabOrder = 1
@@ -180,7 +180,7 @@ object Form3: TForm3
     Left = 256
     Top = 84
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_Name'
     DataSource = DataSource1
     TabOrder = 2
@@ -189,7 +189,7 @@ object Form3: TForm3
     Left = 256
     Top = 118
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_FatherName'
     DataSource = DataSource1
     TabOrder = 3
@@ -198,7 +198,7 @@ object Form3: TForm3
     Left = 256
     Top = 152
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_Gender'
     DataSource = DataSource1
     TabOrder = 4
@@ -207,7 +207,7 @@ object Form3: TForm3
     Left = 256
     Top = 186
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_DateOfBirth'
     DataSource = DataSource1
     TabOrder = 5
@@ -216,7 +216,7 @@ object Form3: TForm3
     Left = 256
     Top = 220
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_Posistion'
     DataSource = DataSource1
     TabOrder = 6
@@ -225,7 +225,7 @@ object Form3: TForm3
     Left = 256
     Top = 254
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_PlaceOfWork'
     DataSource = DataSource1
     TabOrder = 7
@@ -234,7 +234,7 @@ object Form3: TForm3
     Left = 256
     Top = 288
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_Wage'
     DataSource = DataSource1
     TabOrder = 8
@@ -243,7 +243,7 @@ object Form3: TForm3
     Left = 256
     Top = 322
     Width = 193
-    Height = 28
+    Height = 24
     DataField = 'Pe_DateOnWork'
     DataSource = DataSource1
     TabOrder = 9
@@ -265,6 +265,15 @@ object Form3: TForm3
     Caption = #1056
     TabOrder = 11
     OnClick = Button1Click
+  end
+  object Button2: TButton
+    Left = 608
+    Top = 368
+    Width = 89
+    Height = 25
+    Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
+    TabOrder = 12
+    OnClick = Button2Click
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 

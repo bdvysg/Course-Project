@@ -62,6 +62,7 @@ begin
   Combobox1.ItemIndex := 0;
   Edit1.Text := name;
   Edit2.Text := DBGrid1.Fields[4].Value;
+  ComboBox1.ItemIndex := DBGrid1.Fields[3].Value - 3;
   Edit4.Text := ADOQuery1.FieldByName('Pe_Posistion').Value;
 end;
 

@@ -36,13 +36,16 @@ type
     Button1: TButton;
     MainMenu1: TMainMenu;
     N1: TMenuItem;
+    Button2: TButton;
     procedure Button1Click(Sender: TObject);
     procedure N1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
   procedure ViewPersonEdit(id: integer);
+  procedure AddPerson;
   end;
 
 var
@@ -60,6 +63,11 @@ begin
 
 end;
 
+procedure TForm3.Button2Click(Sender: TObject);
+begin
+ ADOQuery1.Post;
+end;
+
 procedure TForm3.N1Click(Sender: TObject);
 begin
   ADOQuery1.Refresh;
@@ -73,7 +81,19 @@ begin
     Form3.Caption := Form3.Caption + IntToStr(ADOQuery1.FieldByName('Pe_Id').Value);
     Form3.Show;
   except
-    
+
+  end;
+end;
+
+procedure TForm3.AddPerson;
+begin
+  try
+    Form3.Caption := 'Реєстрація нового працівника';
+    Button2.Visible := True;
+    Button1.Visible := False;
+    Form3.Show;
+  except
+
   end;
 end;
 

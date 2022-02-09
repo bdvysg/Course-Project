@@ -19,7 +19,7 @@ object Form2: TForm2
     Top = 8
     Width = 740
     Height = 625
-    ActivePage = TabSheet2
+    ActivePage = TabSheet3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -1776,11 +1776,20 @@ object Form2: TForm2
       object Button3: TButton
         Left = 16
         Top = 104
-        Width = 153
+        Width = 163
         Height = 25
         Caption = #1047#1084#1110#1085#1080#1090#1080' '#1084#1110#1089#1094#1077' '#1088#1086#1073#1086#1090#1080
         TabOrder = 1
         OnClick = Button3Click
+      end
+      object Button4: TButton
+        Left = 16
+        Top = 144
+        Width = 163
+        Height = 25
+        Caption = #1044#1086#1076#1072#1090#1080' '#1087#1088#1072#1094#1110#1074#1085#1080#1082#1072
+        TabOrder = 2
+        OnClick = Button4Click
       end
     end
     object TabSheet3: TTabSheet
@@ -1798,6 +1807,15 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+      end
+      object tovars: TButton
+        Left = 88
+        Top = 80
+        Width = 113
+        Height = 25
+        Caption = #1050#1072#1090#1072#1083#1086#1075' '#1090#1086#1074#1072#1088#1110#1074
+        TabOrder = 0
+        OnClick = tovarsClick
       end
     end
     object TabSheet4: TTabSheet
