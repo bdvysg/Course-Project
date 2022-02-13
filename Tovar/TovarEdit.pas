@@ -28,6 +28,7 @@ type
     { Private declarations }
   public
     { Public declarations }
+  procedure ViewTovarEdit(id: integer);
   end;
 
 var
@@ -36,5 +37,17 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm7.ViewTovarEdit(id: integer);
+begin
+  try
+    ADOQuery1.Parameters.ParamByName('Id').Value := id;
+    ADOQuery1.Open;
+    Form7.Caption := Form7.Caption + IntToStr(ADOQuery1.FieldByName('Tov_Id').Value);
+    Form7.Show;
+  except
+
+  end;
+end;
 
 end.

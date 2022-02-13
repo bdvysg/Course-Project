@@ -128,6 +128,10 @@
             <Form>Form7</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Tovar\ChangePrice.pas">
+            <Form>Form8</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Release">
             <Key>Cfg_2</Key>
             <CfgParent>Base</CfgParent>

@@ -8,7 +8,8 @@ uses
   EditWage in 'Person\EditWage.pas' {Form4},
   ChangePlace in 'Person\ChangePlace.pas' {Form5},
   TovarList in 'Tovar\TovarList.pas' {Form6},
-  TovarEdit in 'Tovar\TovarEdit.pas' {Form7};
+  TovarEdit in 'Tovar\TovarEdit.pas' {Form7},
+  ChangePrice in 'Tovar\ChangePrice.pas' {Form8};
 
 {$R *.res}
 
@@ -20,5 +21,6 @@ begin
   Application.CreateForm(TForm5, Form5);
   Application.CreateForm(TForm6, Form6);
   Application.CreateForm(TForm7, Form7);
+  Application.CreateForm(TForm8, Form8);
   Application.Run;
 end.

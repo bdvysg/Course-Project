@@ -14,6 +14,19 @@ object Form2: TForm2
   OnCreate = FormCreate
   PixelsPerInch = 120
   TextHeight = 16
+  object Label5: TLabel
+    Left = 88
+    Top = 56
+    Width = 61
+    Height = 28
+    Caption = #1052#1077#1085#1102
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+  end
   object PageControl1: TPageControl
     Left = 256
     Top = 8
@@ -1817,6 +1830,15 @@ object Form2: TForm2
         TabOrder = 0
         OnClick = tovarsClick
       end
+      object Button6: TButton
+        Left = 88
+        Top = 152
+        Width = 113
+        Height = 25
+        Caption = #1055#1077#1088#1077#1086#1094#1110#1085#1082#1072
+        TabOrder = 1
+        OnClick = Button6Click
+      end
     end
     object TabSheet4: TTabSheet
       Caption = #1052#1072#1075#1072#1079#1080#1085#1080
@@ -1835,10 +1857,14 @@ object Form2: TForm2
         ParentFont = False
       end
     end
+    object TabSheet5: TTabSheet
+      Caption = #1040#1085#1072#1083#1110#1079
+      ImageIndex = 4
+    end
   end
   object MainBtn: TButton
-    Left = 64
-    Top = 31
+    Left = 48
+    Top = 135
     Width = 145
     Height = 39
     Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -1852,8 +1878,8 @@ object Form2: TForm2
     OnClick = MainBtnClick
   end
   object EmployeeBtn: TButton
-    Left = 64
-    Top = 92
+    Left = 48
+    Top = 196
     Width = 145
     Height = 39
     Caption = #1055#1088#1072#1094#1110#1074#1085#1080#1082#1080
@@ -1867,8 +1893,8 @@ object Form2: TForm2
     OnClick = EmployeeBtnClick
   end
   object TovarsBtn: TButton
-    Left = 64
-    Top = 153
+    Left = 48
+    Top = 257
     Width = 145
     Height = 39
     Caption = #1058#1086#1074#1072#1088#1080
@@ -1882,8 +1908,8 @@ object Form2: TForm2
     OnClick = TovarsBtnClick
   end
   object MagazBtn: TButton
-    Left = 64
-    Top = 216
+    Left = 48
+    Top = 320
     Width = 145
     Height = 39
     Caption = #1052#1072#1075#1072#1079#1080#1085#1080
@@ -1897,8 +1923,8 @@ object Form2: TForm2
     OnClick = MagazBtnClick
   end
   object Button1: TButton
-    Left = 64
-    Top = 584
+    Left = 48
+    Top = 590
     Width = 145
     Height = 39
     Caption = #1042#1080#1093#1110#1076
@@ -1910,5 +1936,19 @@ object Form2: TForm2
     ParentFont = False
     TabOrder = 5
     OnClick = Button1Click
+  end
+  object Button5: TButton
+    Left = 48
+    Top = 384
+    Width = 145
+    Height = 39
+    Caption = #1040#1085#1072#1083#1110#1079
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 6
   end
 end
