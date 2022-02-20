@@ -22,6 +22,7 @@ type
     procedure DBGrid1CellClick(Column: TColumn; Button: TMouseButton);
     procedure RadioGroup1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
+    procedure ComboBox1Change(Sender: TObject);
   private
     { Private declarations }
   public
@@ -34,6 +35,21 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm8.ComboBox1Change(Sender: TObject);
+var sql : string;
+begin
+  if not ADOQuery1.IsEmpty then
+  begin
+    ADOQuery1.Close;
+    ADOQuery1.Sql.Clear;
+    ADOQuery1.Sql.Add('select * from Tovar inner join depart on Dep_Id = Tov_Depart inner join Measuring on Ms_Id = Tov_Measuring');
+    if ComboBox1.ItemIndex > 0 then
+      ADOQuery1.Sql.Add(' where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex));
+    ADOQuery1.Open;
+  end;
+
+end;
 
 procedure TForm8.DBGrid1CellClick(Column: TColumn; Button: TMouseButton);
 begin

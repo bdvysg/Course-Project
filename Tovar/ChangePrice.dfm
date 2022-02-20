@@ -21,9 +21,6 @@ object Form8: TForm8
     Height = 466
     Align = alRight
     TabOrder = 0
-    ExplicitLeft = 451
-    ExplicitTop = 208
-    ExplicitHeight = 41
     object Label1: TLabel
       Left = 108
       Top = 440
@@ -56,8 +53,12 @@ object Form8: TForm8
       Top = 264
       Width = 145
       Height = 24
+      ItemIndex = 0
       TabOrder = 2
-      Text = 'ComboBox1'
+      Text = #1042#1089#1110
+      OnChange = ComboBox1Change
+      Items.Strings = (
+        #1042#1089#1110)
     end
   end
   object DBGrid1: TDBGrid
@@ -79,30 +80,35 @@ object Form8: TForm8
       item
         Expanded = False
         FieldName = 'Tov_Id'
+        Title.Caption = #1050#1086#1076
         Width = 62
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Name'
+        Title.Caption = #1053#1072#1079#1074#1072
         Width = 87
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Ms_Name'
+        Title.Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091
         Width = 84
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Price'
+        Title.Caption = #1062#1110#1085#1072
         Width = 99
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Dep_Name'
+        Title.Caption = #1043#1088#1091#1087#1072' '#1090#1086#1074#1072#1088#1110#1074
         Width = 176
         Visible = True
       end>

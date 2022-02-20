@@ -3,9 +3,8 @@ CREATE TABLE Tovar(
   Tov_Name varchar(200) NULL,
   Tov_Price money NULL,
   Tov_Description varchar(500) NULL,
-  Tov_Photo varbinary(max),
+  Tov_Photo varchar(250),
   Tov_Depart smallint NOT NULL,
-  Tov_Group smallint NOT NULL,
   Tov_Measuring smallint NOT NULL,
   Tov_CountryMade varchar(50),
   
