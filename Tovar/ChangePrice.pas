@@ -19,10 +19,13 @@ type
     DataSource2: TDataSource;
     ADOQuery2: TADOQuery;
     ComboBox1: TComboBox;
-    procedure DBGrid1CellClick(Column: TColumn; Button: TMouseButton);
+    Label2: TLabel;
+    Edit1: TEdit;
+    procedure DBGrid1CellClick(Column: TColumn);
     procedure RadioGroup1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -36,32 +39,56 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm8.Button3Click(Sender: TObject);
+var Filter : string;
+    i : integer;
+begin
+  if RadioGroup1.ItemIndex = 0 then
+  begin
+    Filter := 'where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex)
+  end;
+  if RadioGroup1.ItemIndex = 1 then
+  begin
+    Filter := 'where Tov_Id in (';
+    for i := 0 to DBGrid1.SelectedRows.Count - 1 do
+    begin
+      DBGrid1.DataSource.DataSet.Bookmark := DBGrid1.SelectedRows[i];
+      Filter := Filter + DBGrid1.Fields[0].AsString;
+      if i < DBGrid1.SelectedRows.Count - 1 then
+        Filter := Filter + ', '
+      else
+        Filter := Filter + ')'
+    end;
+  end;
+  ShowMessage(Filter)
+
+end;
+
 procedure TForm8.ComboBox1Change(Sender: TObject);
 var sql : string;
 begin
-  if not ADOQuery1.IsEmpty then
-  begin
     ADOQuery1.Close;
     ADOQuery1.Sql.Clear;
     ADOQuery1.Sql.Add('select * from Tovar inner join depart on Dep_Id = Tov_Depart inner join Measuring on Ms_Id = Tov_Measuring');
     if ComboBox1.ItemIndex > 0 then
       ADOQuery1.Sql.Add(' where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex));
     ADOQuery1.Open;
-  end;
-
+    Label1.Caption := 'Обрано - ' + IntToStr(ADOQuery1.RecordCount);
 end;
 
-procedure TForm8.DBGrid1CellClick(Column: TColumn; Button: TMouseButton);
+procedure TForm8.DBGrid1CellClick(Column: TColumn);
 begin
-    if Button = mbRight then
+    if Column.Index = 0 then
     begin
         Form7 := TForm7.Create(Self);
         Form7.ViewTOvarEdit(DBGrid1.Fields[0].Value);
     end;
+    Label1.Caption := 'Обрано - ' + IntToStr(DBGrid1.SelectedRows.Count);
 end;
 
 procedure TForm8.FormCreate(Sender: TObject);
 begin
+  ADOQuery1.Open;
   ADOQuery2.First;
   while not ADOQuery2.Eof do
   begin
@@ -73,10 +100,15 @@ end;
 procedure TForm8.RadioGroup1Click(Sender: TObject);
 begin
   if RadioGroup1.ItemIndex = 1 then
+  begin
     ComboBox1.Enabled := False;
+    DBGrid1.Options := [dgTitles,dgIndicator,dgColumnResize,dgColLines,dgRowLines,dgTabs,dgConfirmDelete,dgCancelOnExit,dgMultiSelect,dgTitleClick,dgTitleHotTrack];
+  end;
   if RadioGroup1.ItemIndex = 0 then
+  begin
     ComboBox1.Enabled := True;
-
+    DBGrid1.Options := [dgTitles,dgIndicator,dgColumnResize,dgColLines,dgRowLines,dgTabs,dgConfirmDelete,dgCancelOnExit,dgTitleClick,dgTitleHotTrack];
+  end;
 end;
 
 end.

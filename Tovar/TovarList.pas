@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Menus, Data.Win.ADODB;
+  Vcl.Menus, Data.Win.ADODB, TovarEdit;
 
 type
   TForm6 = class(TForm)
@@ -34,6 +34,8 @@ type
     procedure N9Click(Sender: TObject);
     procedure N10Click(Sender: TObject);
     procedure N11Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
   private
     { Private declarations }
   public
@@ -48,6 +50,19 @@ implementation
 
 {$R *.dfm}
 
+procedure TForm6.DBGrid1CellClick(Column: TColumn);
+begin
+  Form7 := TForm7.Create(Self);
+  Form7.ViewTovarEdit(DBGrid1.Fields[0].Value);
+end;
+
+procedure TForm6.FormCreate(Sender: TObject);
+begin
+  if not ADOQuery1.IsEmpty then
+    ADOQuery1.Close;
+  ADOQuery1.Open;
+end;
+
 procedure TForm6.N10Click(Sender: TObject);
 begin
   QRefresh(8);
@@ -60,7 +75,8 @@ end;
 
 procedure TForm6.N1Click(Sender: TObject);
 begin
-  ADOQuery1.Close;
+  if not ADOQuery1.IsEmpty then
+    ADOQuery1.Close;
   ADOQuery1.Open;
 end;
 

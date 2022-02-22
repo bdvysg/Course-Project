@@ -25,6 +25,7 @@ def scrap_page(url : str):
                     titles.append(div.text[0: div.text.index('(')].lstrip())
                 except:
                     print('Ошибка названия - ' + div.text)
+                    titles.append('')
             try:
                 prices.append(re.findall('(\d*.\d*) ₴', div.text)[0].strip().replace('\xa0', ''))
             except:
@@ -79,9 +80,15 @@ def make_sql(data: tuple, dep: int, mesur: str):
 
 
 #make_sql(scrap_page('https://rozetka.com.ua/ua/lak/c4626489/'), 1, 1)
-make_sql(scrap_page('https://rozetka.com.ua/ua/kraska/c4626429/'), 1, 1)
-
+#make_sql(scrap_page('https://rozetka.com.ua/ua/kraska/c4626429/'), 1, 1)
 #make_sql(scrap_page('https://rozetka.com.ua/ua/detskie-igrushki/c4265805/'), 3, 1)
+#make_sql(scrap_page('https://rozetka.com.ua/ua/polki/c4629192/'), 2, 1)
+#make_sql(scrap_page('https://rozetka.com.ua/ua/elektrotransport/c4625901/'), 4, 1)
+#make_sql(scrap_page('https://rozetka.com.ua/ua/kuhonnye-prinadlejnosti/c4626604/'), 5, 1)
+#make_sql(scrap_page('https://rozetka.com.ua/ua/sredstva-dlya-kuhni/c4650351/'), 6, 1)
+make_sql(scrap_page('https://rozetka.com.ua/ua/search/?text=%D1%81%D1%83%D0%B2%D0%B5%D0%BD%D1%96%D1%80%D0%B8'), 7, 1)
+make_sql(scrap_page('https://rozetka.com.ua/ua/sadoviy-inventar/c4625304/'), 8, 1)
+make_sql(scrap_page('https://rozetka.com.ua/ua/naushniki-i-aksessuari/c4660594/21078=vakuumnie,2726/'), 9, 1)
 
 
         

@@ -3,7 +3,7 @@ object Form6: TForm6
   Top = 0
   Caption = #1044#1086#1074#1110#1076#1085#1080#1082' '#1090#1086#1074#1072#1088#1110#1074
   ClientHeight = 635
-  ClientWidth = 567
+  ClientWidth = 1026
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,12 +12,13 @@ object Form6: TForm6
   Font.Style = []
   Menu = MainMenu1
   OldCreateOrder = False
+  OnCreate = FormCreate
   PixelsPerInch = 120
   TextHeight = 16
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 567
+    Width = 1026
     Height = 635
     Align = alClient
     DataSource = DataSource1
@@ -27,10 +28,12 @@ object Form6: TForm6
     TitleFont.Height = -13
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
         FieldName = 'Tov_Id'
+        Width = 94
         Visible = True
       end
       item
@@ -42,12 +45,13 @@ object Form6: TForm6
       item
         Expanded = False
         FieldName = 'Ms_Name'
+        Width = 99
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Price'
-        Width = 101
+        Width = 143
         Visible = True
       end
       item

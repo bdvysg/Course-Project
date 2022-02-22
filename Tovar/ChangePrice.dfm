@@ -2,8 +2,8 @@ object Form8: TForm8
   Left = 0
   Top = 0
   Caption = #1055#1077#1088#1077#1086#1094#1110#1085#1082#1072
-  ClientHeight = 466
-  ClientWidth = 644
+  ClientHeight = 603
+  ClientWidth = 851
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -15,18 +15,31 @@ object Form8: TForm8
   PixelsPerInch = 120
   TextHeight = 16
   object Panel1: TPanel
-    Left = 459
+    Left = 666
     Top = 0
     Width = 185
-    Height = 466
+    Height = 603
     Align = alRight
     TabOrder = 0
+    ExplicitLeft = 459
+    ExplicitHeight = 466
+    DesignSize = (
+      185
+      603)
     object Label1: TLabel
-      Left = 108
-      Top = 440
+      Left = 99
+      Top = 577
       Width = 57
       Height = 16
+      Anchors = [akRight, akBottom]
       Caption = #1054#1073#1088#1072#1085#1086' - '
+    end
+    object Label2: TLabel
+      Left = 61
+      Top = 368
+      Width = 72
+      Height = 16
+      Caption = '% '#1053#1072#1076#1073#1072#1074#1082#1080
     end
     object RadioGroup1: TRadioGroup
       Left = 16
@@ -42,11 +55,14 @@ object Form8: TForm8
     end
     object Button3: TButton
       Left = 56
-      Top = 392
+      Top = 529
       Width = 97
       Height = 25
+      Anchors = [akRight, akBottom]
       Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
       TabOrder = 1
+      OnClick = Button3Click
+      ExplicitTop = 392
     end
     object ComboBox1: TComboBox
       Left = 24
@@ -60,12 +76,19 @@ object Form8: TForm8
       Items.Strings = (
         #1042#1089#1110)
     end
+    object Edit1: TEdit
+      Left = 24
+      Top = 400
+      Width = 145
+      Height = 24
+      TabOrder = 3
+    end
   end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 459
-    Height = 466
+    Width = 666
+    Height = 603
     Align = alClient
     DataSource = DataSource1
     Options = [dgTitles, dgIndicator, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgConfirmDelete, dgCancelOnExit, dgMultiSelect, dgTitleClick, dgTitleHotTrack]
@@ -81,35 +104,37 @@ object Form8: TForm8
         Expanded = False
         FieldName = 'Tov_Id'
         Title.Caption = #1050#1086#1076
-        Width = 62
+        Width = 91
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Name'
         Title.Caption = #1053#1072#1079#1074#1072
-        Width = 87
+        Width = 125
         Visible = True
       end
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'Ms_Name'
         Title.Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091
-        Width = 84
+        Width = 147
         Visible = True
       end
       item
+        Alignment = taCenter
         Expanded = False
         FieldName = 'Tov_Price'
         Title.Caption = #1062#1110#1085#1072
-        Width = 99
+        Width = 169
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Dep_Name'
         Title.Caption = #1043#1088#1091#1087#1072' '#1090#1086#1074#1072#1088#1110#1074
-        Width = 176
+        Width = 281
         Visible = True
       end>
   end

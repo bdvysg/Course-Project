@@ -2,8 +2,8 @@ object Form7: TForm7
   Left = 0
   Top = 0
   Caption = #1050#1072#1088#1090#1086#1095#1082#1072' '#1090#1086#1074#1072#1088#1091
-  ClientHeight = 291
-  ClientWidth = 713
+  ClientHeight = 270
+  ClientWidth = 720
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -14,8 +14,8 @@ object Form7: TForm7
   PixelsPerInch = 120
   TextHeight = 16
   object Label1: TLabel
-    Left = 24
-    Top = 16
+    Left = 8
+    Top = 8
     Width = 47
     Height = 28
     Caption = #1050#1086#1076':'
@@ -27,8 +27,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label2: TLabel
-    Left = 24
-    Top = 50
+    Left = 8
+    Top = 42
     Width = 71
     Height = 28
     Caption = #1053#1072#1079#1074#1072':'
@@ -40,8 +40,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label3: TLabel
-    Left = 24
-    Top = 84
+    Left = 8
+    Top = 76
     Width = 54
     Height = 28
     Caption = #1062#1110#1085#1072':'
@@ -53,8 +53,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label4: TLabel
-    Left = 24
-    Top = 116
+    Left = 8
+    Top = 108
     Width = 69
     Height = 28
     Caption = #1043#1088#1091#1087#1072':'
@@ -66,8 +66,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label5: TLabel
-    Left = 24
-    Top = 150
+    Left = 8
+    Top = 142
     Width = 120
     Height = 28
     Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091':'
@@ -79,8 +79,8 @@ object Form7: TForm7
     ParentFont = False
   end
   object Label6: TLabel
-    Left = 24
-    Top = 184
+    Left = 8
+    Top = 176
     Width = 154
     Height = 28
     Caption = #1050#1088#1072#1111#1085#1072' '#1074#1080#1088#1086#1073'.:'
@@ -91,66 +91,66 @@ object Form7: TForm7
     Font.Style = []
     ParentFont = False
   end
-  object DBImage1: TDBImage
-    Left = 384
-    Top = 16
-    Width = 321
-    Height = 267
-    TabOrder = 0
+  object Image1: TImage
+    Left = 400
+    Top = 8
+    Width = 313
+    Height = 241
+    AutoSize = True
   end
   object DBEdit1: TDBEdit
-    Left = 196
-    Top = 16
+    Left = 180
+    Top = 8
     Width = 153
-    Height = 28
+    Height = 24
     DataField = 'Tov_Id'
+    DataSource = DataSource1
+    TabOrder = 0
+  end
+  object DBEdit2: TDBEdit
+    Left = 180
+    Top = 42
+    Width = 153
+    Height = 24
+    DataField = 'Tov_Name'
     DataSource = DataSource1
     TabOrder = 1
   end
-  object DBEdit2: TDBEdit
-    Left = 196
-    Top = 50
+  object DBEdit3: TDBEdit
+    Left = 180
+    Top = 76
     Width = 153
-    Height = 28
-    DataField = 'Tov_Name'
+    Height = 24
+    DataField = 'Tov_Price'
     DataSource = DataSource1
     TabOrder = 2
   end
-  object DBEdit3: TDBEdit
-    Left = 196
-    Top = 84
+  object DBEdit4: TDBEdit
+    Left = 180
+    Top = 110
     Width = 153
-    Height = 28
-    DataField = 'Tov_Price'
+    Height = 24
+    DataField = 'Dep_Name'
     DataSource = DataSource1
     TabOrder = 3
   end
-  object DBEdit4: TDBEdit
-    Left = 196
-    Top = 118
+  object DBEdit5: TDBEdit
+    Left = 180
+    Top = 142
     Width = 153
-    Height = 28
-    DataField = 'Tov_Depart'
+    Height = 24
+    DataField = 'Ms_Name'
     DataSource = DataSource1
     TabOrder = 4
   end
-  object DBEdit5: TDBEdit
-    Left = 196
-    Top = 150
-    Width = 153
-    Height = 28
-    DataField = 'Ms_Name'
-    DataSource = DataSource1
-    TabOrder = 5
-  end
   object DBEdit6: TDBEdit
-    Left = 196
-    Top = 184
+    Left = 180
+    Top = 176
     Width = 153
-    Height = 28
+    Height = 24
     DataField = 'Tov_CountryMade'
     DataSource = DataSource1
-    TabOrder = 6
+    TabOrder = 5
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
@@ -181,5 +181,10 @@ object Form7: TForm7
     DataSet = ADOQuery1
     Left = 368
     Top = 184
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 312
+    Top = 240
   end
 end
