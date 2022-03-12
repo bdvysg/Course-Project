@@ -14,6 +14,7 @@ GO
 
 ALTER TABLE Tovar
   ADD 
+    Tov_PriceOpt money NULL,
     CONSTRAINT FK_Measuring FOREIGN KEY (Tov_Measuring) REFERENCES Measuring(Ms_Id),
     CONSTRAINT FK_Depart FOREIGN KEY (Tov_Depart) REFERENCES Depart(Dep_Id),
     CONSTRAINT FK_Group FOREIGN KEY (Tov_Group) REFERENCES TGroup(Gr_Id)

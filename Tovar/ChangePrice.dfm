@@ -21,8 +21,6 @@ object Form8: TForm8
     Height = 603
     Align = alRight
     TabOrder = 0
-    ExplicitLeft = 459
-    ExplicitHeight = 466
     DesignSize = (
       185
       603)
@@ -62,7 +60,6 @@ object Form8: TForm8
       Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
       TabOrder = 1
       OnClick = Button3Click
-      ExplicitTop = 392
     end
     object ComboBox1: TComboBox
       Left = 24
@@ -104,14 +101,14 @@ object Form8: TForm8
         Expanded = False
         FieldName = 'Tov_Id'
         Title.Caption = #1050#1086#1076
-        Width = 91
+        Width = 48
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Name'
         Title.Caption = #1053#1072#1079#1074#1072
-        Width = 125
+        Width = 243
         Visible = True
       end
       item
@@ -119,7 +116,7 @@ object Form8: TForm8
         Expanded = False
         FieldName = 'Ms_Name'
         Title.Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091
-        Width = 147
+        Width = 105
         Visible = True
       end
       item
@@ -127,7 +124,7 @@ object Form8: TForm8
         Expanded = False
         FieldName = 'Tov_Price'
         Title.Caption = #1062#1110#1085#1072
-        Width = 169
+        Width = 92
         Visible = True
       end
       item
@@ -178,5 +175,35 @@ object Form8: TForm8
       'select * from Depart')
     Left = 579
     Top = 120
+  end
+  object ADOQuery3: TADOQuery
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=CourseProj;Data Source=DESKTOP-091F74U\' +
+      'SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packe' +
+      't Size=4096;Workstation ID=DESKTOP-091F74U;Use Encryption for Da' +
+      'ta=False;Tag with column collation when possible=False;'
+    Parameters = <
+      item
+        Name = 'Percent'
+        Attributes = [paSigned, paNullable]
+        DataType = ftBCD
+        NumericScale = 4
+        Precision = 19
+        Size = 8
+        Value = Null
+      end>
+    SQL.Strings = (
+      'update tovar '
+      'set Tov_Price = Tov_Price + Tov_Price*(:Percent / 100)'
+      'from tovar'
+      'inner join Depart on Dep_Id = Tov_Depart')
+    Left = 448
+    Top = 280
+  end
+  object DataSource3: TDataSource
+    DataSet = ADOQuery3
+    Left = 368
+    Top = 312
   end
 end

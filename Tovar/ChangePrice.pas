@@ -21,6 +21,8 @@ type
     ComboBox1: TComboBox;
     Label2: TLabel;
     Edit1: TEdit;
+    ADOQuery3: TADOQuery;
+    DataSource3: TDataSource;
     procedure DBGrid1CellClick(Column: TColumn);
     procedure RadioGroup1Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -60,8 +62,11 @@ begin
         Filter := Filter + ')'
     end;
   end;
-  ShowMessage(Filter)
-
+  ADOQuery3.Sql.Add(Filter);
+  ADOQuery3.Parameters.ParamByName('Percent').Value := strtoint(Edit1.Text);
+  ADOQuery3.ExecSQL();
+  //ShowMessage(inttostr(ADOQuery3.RecordCount));
+  ADOQuery1.Refresh;
 end;
 
 procedure TForm8.ComboBox1Change(Sender: TObject);
