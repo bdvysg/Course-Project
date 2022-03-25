@@ -24,6 +24,7 @@ type
     N11: TMenuItem;
     ADOQuery1: TADOQuery;
     DataSource1: TDataSource;
+    N12: TMenuItem;
     procedure N1Click(Sender: TObject);
     procedure N3Click(Sender: TObject);
     procedure N4Click(Sender: TObject);
@@ -36,6 +37,7 @@ type
     procedure N11Click(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure N12Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -71,6 +73,12 @@ end;
 procedure TForm6.N11Click(Sender: TObject);
 begin
   QRefresh(9);
+end;
+
+procedure TForm6.N12Click(Sender: TObject);
+begin
+  Form7 := TForm7.Create(Self);
+  Form7.ViewTovarEdit(0);
 end;
 
 procedure TForm6.N1Click(Sender: TObject);

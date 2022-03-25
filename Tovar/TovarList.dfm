@@ -107,14 +107,18 @@ object Form6: TForm6
         OnClick = N11Click
       end
     end
+    object N12: TMenuItem
+      Caption = #1044#1086#1076#1072#1090#1080
+      OnClick = N12Click
+    end
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=CourseProj;Data Source=DESKTOP-091F74U\' +
-      'SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packe' +
-      't Size=4096;Workstation ID=DESKTOP-091F74U;Use Encryption for Da' +
-      'ta=False;Tag with column collation when possible=False;'
+      'fo=False;Initial Catalog=CourseProj;Data Source=BDVYSG\SQLEXPRES' +
+      'S;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=40' +
+      '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False;'
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

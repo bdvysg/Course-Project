@@ -1,4 +1,4 @@
-CREATE TABLE Purchase(
+CREATE TABLE Sales(
   Pr_Id smallint IDENTITY(1,1) NOT NULL,
   Pr_Tovar smallint NULL,
   Pr_Amount float DEFAULT 1,

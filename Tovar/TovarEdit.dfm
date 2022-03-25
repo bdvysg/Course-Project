@@ -2,7 +2,7 @@ object Form7: TForm7
   Left = 0
   Top = 0
   Caption = #1050#1072#1088#1090#1086#1095#1082#1072' '#1090#1086#1074#1072#1088#1091
-  ClientHeight = 270
+  ClientHeight = 281
   ClientWidth = 720
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -98,6 +98,20 @@ object Form7: TForm7
     Height = 241
     AutoSize = True
   end
+  object Label7: TLabel
+    Left = 8
+    Top = 206
+    Width = 60
+    Height = 28
+    Caption = #1060#1086#1090#1086':'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -23
+    Font.Name = 'Tahoma'
+    Font.Style = []
+    ParentFont = False
+    Visible = False
+  end
   object DBEdit1: TDBEdit
     Left = 180
     Top = 8
@@ -105,6 +119,7 @@ object Form7: TForm7
     Height = 24
     DataField = 'Tov_Id'
     DataSource = DataSource1
+    ReadOnly = True
     TabOrder = 0
   end
   object DBEdit2: TDBEdit
@@ -152,13 +167,33 @@ object Form7: TForm7
     DataSource = DataSource1
     TabOrder = 5
   end
+  object DBEdit7: TDBEdit
+    Left = 180
+    Top = 206
+    Width = 153
+    Height = 24
+    DataField = 'Tov_Photo'
+    DataSource = DataSource1
+    TabOrder = 6
+    Visible = False
+  end
+  object Button1: TButton
+    Left = 136
+    Top = 248
+    Width = 75
+    Height = 25
+    Caption = #1044#1086#1076#1072#1090#1080
+    TabOrder = 7
+    Visible = False
+    OnClick = Button1Click
+  end
   object ADOQuery1: TADOQuery
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=CourseProj;Data Source=DESKTOP-091F74U\' +
-      'SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packe' +
-      't Size=4096;Workstation ID=DESKTOP-091F74U;Use Encryption for Da' +
-      'ta=False;Tag with column collation when possible=False;'
+      'fo=False;Initial Catalog=CourseProj;Data Source=BDVYSG\SQLEXPRES' +
+      'S;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=40' +
+      '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False;'
     CursorType = ctStatic
     Parameters = <
       item
@@ -186,5 +221,24 @@ object Form7: TForm7
     UserAgent = 'Embarcadero URI Client/1.0'
     Left = 312
     Top = 240
+  end
+  object ADOQuery2: TADOQuery
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=CourseProj;Data Source=BDVYSG\SQLEXPRES' +
+      'S;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=40' +
+      '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False;'
+    Parameters = <>
+    SQL.Strings = (
+      'select top 1 Tov_Id from Tovar '
+      'order by Tov_Id desc')
+    Left = 360
+    Top = 128
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOQuery2
+    Left = 360
+    Top = 80
   end
 end

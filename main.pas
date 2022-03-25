@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
-  Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList, ChangePlace, PersonEdit, TovarList, ChangePrice;
+  Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList, ChangePlace, PersonEdit, TovarList, ChangePrice,
+  Vcl.Imaging.jpeg;
 
 type
   TForm2 = class(TForm)
@@ -32,6 +33,7 @@ type
     Label5: TLabel;
     Button6: TButton;
     TabSheet5: TTabSheet;
+    Button7: TButton;
     procedure MainBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EmployeeBtnClick(Sender: TObject);
@@ -117,6 +119,7 @@ begin
   TabSheet2.TabVisible := False;
   TabSheet3.TabVisible := False;
   TabSheet4.TabVisible := False;
+  TabSheet5.TabVisible := False;
   PageControl1.ActivePageIndex := 0;
   Application.Icon.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\shop48.ico');
 end;
