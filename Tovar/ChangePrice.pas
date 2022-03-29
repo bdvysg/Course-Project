@@ -62,10 +62,12 @@ begin
         Filter := Filter + ')'
     end;
   end;
+  ADOQuery3.SQL.Clear;
+  ADOQuery3.SQL.Add('update tovar set Tov_Price = Tov_Price + Tov_Price*(:Percent / 100) from tovar inner join Depart on Dep_Id = Tov_Depart');
   ADOQuery3.Sql.Add(Filter);
   ADOQuery3.Parameters.ParamByName('Percent').Value := strtoint(Edit1.Text);
   ADOQuery3.ExecSQL();
-  //ShowMessage(inttostr(ADOQuery3.RecordCount));
+  ShowMessage('Оновленно - ' + inttostr(DBGrid1.SelectedRows.Count) + ' товарів');
   ADOQuery1.Refresh;
 end;
 
@@ -94,6 +96,7 @@ end;
 procedure TForm8.FormCreate(Sender: TObject);
 begin
   ADOQuery1.Open;
+  ADOQuery2.Open;
   ADOQuery2.First;
   while not ADOQuery2.Eof do
   begin

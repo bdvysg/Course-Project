@@ -136,8 +136,8 @@
             <Form>InnerPurchaseListForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
-        <DCCReference Include="InnerPurchaseEdit.pas">
-            <Form>InnerPurchaseEditFrom</Form>
+        <DCCReference Include="Tovar\InnerPurchaseEdit.pas">
+            <Form>InnerPurchaseEditForm</Form>
             <FormType>dfm</FormType>
         </DCCReference>
         <BuildConfiguration Include="Release">

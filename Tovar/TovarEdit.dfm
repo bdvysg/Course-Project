@@ -42,9 +42,9 @@ object Form7: TForm7
   object Label3: TLabel
     Left = 8
     Top = 76
-    Width = 54
+    Width = 155
     Height = 28
-    Caption = #1062#1110#1085#1072':'
+    Caption = #1062#1110#1085#1072' '#1088#1086#1079#1085'/'#1086#1087#1090':'
     Font.Charset = DEFAULT_CHARSET
     Font.Color = clWindowText
     Font.Height = -23
@@ -134,7 +134,7 @@ object Form7: TForm7
   object DBEdit3: TDBEdit
     Left = 180
     Top = 76
-    Width = 153
+    Width = 75
     Height = 24
     DataField = 'Tov_Price'
     DataSource = DataSource1
@@ -169,7 +169,7 @@ object Form7: TForm7
   end
   object DBEdit7: TDBEdit
     Left = 180
-    Top = 206
+    Top = 210
     Width = 153
     Height = 24
     DataField = 'Tov_Photo'
@@ -186,6 +186,15 @@ object Form7: TForm7
     TabOrder = 7
     Visible = False
     OnClick = Button1Click
+  end
+  object DBEdit8: TDBEdit
+    Left = 258
+    Top = 76
+    Width = 75
+    Height = 24
+    DataField = 'Tov_PriceOpt'
+    DataSource = DataSource1
+    TabOrder = 8
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 

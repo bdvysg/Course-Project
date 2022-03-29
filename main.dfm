@@ -32,7 +32,7 @@ object Form2: TForm2
     Top = 8
     Width = 740
     Height = 625
-    ActivePage = TabSheet1
+    ActivePage = TabSheet3
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -46,7 +46,7 @@ object Form2: TForm2
         Left = 0
         Top = 0
         Width = 732
-        Height = 37
+        Height = 28
         Align = alTop
         Alignment = taCenter
         Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -56,12 +56,13 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+        ExplicitWidth = 99
       end
       object Image1: TImage
         Left = 0
-        Top = 37
+        Top = 28
         Width = 732
-        Height = 557
+        Height = 566
         Align = alClient
         Picture.Data = {
           0A544A504547496D6167652D550100FFD8FFE000104A46494600010101007800
@@ -2818,8 +2819,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 176
-        ExplicitTop = 9
         ExplicitWidth = 141
       end
       object Button2: TButton
@@ -2867,8 +2866,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 184
-        ExplicitTop = 9
         ExplicitWidth = 85
       end
       object tovars: TButton
@@ -2896,6 +2893,7 @@ object Form2: TForm2
         Height = 25
         Caption = #1047#1072#1082#1091#1087#1080#1090#1080
         TabOrder = 2
+        OnClick = Button7Click
       end
     end
     object TabSheet4: TTabSheet
@@ -2904,7 +2902,7 @@ object Form2: TForm2
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 732
+        Width = 117
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -2915,9 +2913,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitLeft = 184
-        ExplicitTop = 9
-        ExplicitWidth = 117
       end
     end
     object TabSheet5: TTabSheet

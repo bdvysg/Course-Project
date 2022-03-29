@@ -32,6 +32,7 @@ type
     ADOQuery2: TADOQuery;
     DataSource2: TDataSource;
     Button1: TButton;
+    DBEdit8: TDBEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -66,8 +67,8 @@ begin
       ADOQuery1.Parameters.ParamByName('Id').Value := id;
       ADOQuery1.Open;
       Button1.Visible := false;
-      Label7.Visible := true;
-      DBEdit7.Visible := true;
+      Label7.Visible := false;
+      DBEdit7.Visible := false;
       Form7.Caption := 'Карточка товару' + ' - ' + IntToStr(ADOQuery1.FieldByName('Tov_Id').Value);
       Stream := TMemoryStream.Create();
       Jpeg := TJPEGImage.Create();

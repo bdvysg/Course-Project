@@ -6,7 +6,7 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList, ChangePlace, PersonEdit, TovarList, ChangePrice,
-  Vcl.Imaging.jpeg;
+  Vcl.Imaging.jpeg, InnerPurchaseList;
 
 type
   TForm2 = class(TForm)
@@ -45,6 +45,7 @@ type
     procedure Button4Click(Sender: TObject);
     procedure tovarsClick(Sender: TObject);
     procedure Button6Click(Sender: TObject);
+    procedure Button7Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -106,6 +107,12 @@ procedure TForm2.Button6Click(Sender: TObject);
 begin
   Form8 := TForm8.Create(Application.MainForm);
   Form8.Show;
+end;
+
+procedure TForm2.Button7Click(Sender: TObject);
+begin
+  InnerPurchaseListForm := TInnerPurchaseListForm.Create(Self);
+  InnerPurchaseListForm.Show;
 end;
 
 procedure TForm2.EmployeeBtnClick(Sender: TObject);
