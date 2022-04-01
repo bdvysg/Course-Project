@@ -6,7 +6,10 @@ uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls,
   Vcl.Imaging.pngimage, Vcl.ExtCtrls, PersonList, ChangePlace, PersonEdit, TovarList, ChangePrice,
-  Vcl.Imaging.jpeg, InnerPurchaseList;
+  Vcl.Imaging.jpeg, InnerPurchaseList, System.Net.URLClient,
+  System.Net.HttpClient, System.Net.HttpClientComponent, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdTelnet, IdRawBase, IdRawClient,
+  IdIcmpClient;
 
 type
   TForm2 = class(TForm)
@@ -34,6 +37,20 @@ type
     Button6: TButton;
     TabSheet5: TTabSheet;
     Button7: TButton;
+    Label6: TLabel;
+    Image2: TImage;
+    Label7: TLabel;
+    Image3: TImage;
+    Image4: TImage;
+    Label8: TLabel;
+    Image5: TImage;
+    Label9: TLabel;
+    Image6: TImage;
+    Label10: TLabel;
+    Label11: TLabel;
+    Image7: TImage;
+    Timer1: TTimer;
+    IdIcmpClient1: TIdIcmpClient;
     procedure MainBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EmployeeBtnClick(Sender: TObject);
@@ -46,6 +63,7 @@ type
     procedure tovarsClick(Sender: TObject);
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
+    procedure Timer1Timer(Sender: TObject);
   private
     { Private declarations }
   public
@@ -67,6 +85,13 @@ end;
 procedure TForm2.MainBtnClick(Sender: TObject);
 begin
   PageControl1.ActivePageIndex:= 0;
+end;
+
+procedure TForm2.Timer1Timer(Sender: TObject);
+begin
+  IdIcmpClient1.ping;
+  label3.caption := 'Время до хоста: '+ inttostr(IdIcmpClient1.ReplyStatus.MsRoundTripTime) + 'ms';
+
 end;
 
 procedure TForm2.TovarsBtnClick(Sender: TObject);

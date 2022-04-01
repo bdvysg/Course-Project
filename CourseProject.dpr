@@ -18,8 +18,7 @@ uses
 begin
   Application.Initialize;
   Application.MainFormOnTaskbar := True;
+  Application.Title := 'Shop';
   Application.CreateForm(TForm2, Form2);
-  Application.CreateForm(TInnerPurchaseListForm, InnerPurchaseListForm);
-  Application.CreateForm(TInnerPurchaseEditForm, InnerPurchaseEditForm);
   Application.Run;
 end.

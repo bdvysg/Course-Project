@@ -32,7 +32,7 @@ object Form2: TForm2
     Top = 8
     Width = 740
     Height = 625
-    ActivePage = TabSheet3
+    ActivePage = TabSheet4
     TabOrder = 0
     object TabSheet1: TTabSheet
       Caption = #1043#1086#1083#1086#1074#1085#1072
@@ -2902,7 +2902,7 @@ object Form2: TForm2
       object Label3: TLabel
         Left = 0
         Top = 0
-        Width = 117
+        Width = 732
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -2913,6 +2913,121 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
+        ExplicitWidth = 117
+      end
+      object Label6: TLabel
+        Left = 72
+        Top = 80
+        Width = 152
+        Height = 28
+        Caption = #1043#1086#1083#1086#1074#1085#1080#1081' '#1086#1092#1110#1089
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Image2: TImage
+        Left = 320
+        Top = 80
+        Width = 28
+        Height = 28
+      end
+      object Label7: TLabel
+        Left = 72
+        Top = 114
+        Width = 233
+        Height = 28
+        Caption = #1052#1072#1075#1072#1079#1080#1085' '#1075#1086#1089#1087'. '#1090#1086#1074#1072#1088#1110#1074
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Image3: TImage
+        Left = 320
+        Top = 114
+        Width = 28
+        Height = 28
+      end
+      object Image4: TImage
+        Left = 320
+        Top = 148
+        Width = 28
+        Height = 28
+      end
+      object Label8: TLabel
+        Left = 72
+        Top = 148
+        Width = 178
+        Height = 28
+        Caption = #1058#1086#1074#1072#1088#1080' '#1076#1083#1103' '#1076#1086#1084#1091
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Image5: TImage
+        Left = 320
+        Top = 182
+        Width = 28
+        Height = 28
+      end
+      object Label9: TLabel
+        Left = 72
+        Top = 182
+        Width = 177
+        Height = 28
+        Caption = #1052#1091#1088#1072#1096#1082#1072'-'#1084#1072#1088#1082#1077#1090
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Image6: TImage
+        Left = 320
+        Top = 216
+        Width = 28
+        Height = 28
+      end
+      object Label10: TLabel
+        Left = 72
+        Top = 216
+        Width = 154
+        Height = 28
+        Caption = '1000 '#1076#1088#1110#1073#1085#1080#1094#1100
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Label11: TLabel
+        Left = 72
+        Top = 250
+        Width = 128
+        Height = 28
+        Caption = #1045#1082#1086'-'#1089#1077#1075#1084#1077#1085#1090
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -23
+        Font.Name = 'Tahoma'
+        Font.Style = []
+        ParentFont = False
+      end
+      object Image7: TImage
+        Left = 320
+        Top = 250
+        Width = 28
+        Height = 28
       end
     end
     object TabSheet5: TTabSheet
@@ -3009,5 +3124,19 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+  end
+  object Timer1: TTimer
+    Interval = 500
+    OnTimer = Timer1Timer
+    Left = 620
+    Top = 379
+  end
+  object IdIcmpClient1: TIdIcmpClient
+    Host = '172.217.16.36'
+    ReceiveTimeout = 100
+    Protocol = 1
+    ProtocolIPv6 = 58
+    Left = 492
+    Top = 395
   end
 end

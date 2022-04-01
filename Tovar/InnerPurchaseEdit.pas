@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.StdCtrls,
-  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit;
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit, Vcl.Menus;
 
 type
   TInnerPurchaseEditForm = class(TForm)
@@ -24,11 +24,18 @@ type
     DataSource3: TDataSource;
     ADOQuery3: TADOQuery;
     ComboBox2: TComboBox;
+    Button3: TButton;
+    PopupMenu1: TPopupMenu;
+    N1: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure DBGrid2CellClick(Column: TColumn);
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
+    procedure ComboBox2Change(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure DBGrid1CellClick(Column: TColumn);
+    procedure N1Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -48,6 +55,7 @@ implementation
 procedure TInnerPurchaseEditForm.InnerPurchaseEditFormView(id_ : integer);
 begin
   id := id_;
+  Button3.Caption := 'Підтвердити';
   if id = 0 then
   begin
     ADOQuery1.Close;
@@ -66,9 +74,36 @@ begin
     InnerPurchaseEditForm.Caption := 'Документ закупки - ' + IntToStr(id);
     ADOQuery3.Parameters.ParamByName('ID').Value := id;
     ADOQuery3.Open;
+    ADOQuery1.Close;
+    ADOQuery1.SQL.Clear;
+    ADOQuery1.SQL.Add('select * from Purchase where Pr_Id = ' + IntToStr(id));
+    ADOQuery1.Open;
+    ComboBox2.ItemIndex := ADOQuery1.FieldByName('Pr_Storage').Value - 1;
+    if ADOQuery1.FieldByName('Pr_IsConifrm').Value = True then
+    begin
+      InnerPurchaseEditForm.Caption := 'Документ закупки - ' + IntToStr(id) + '  ЗАТВЕРДЖЕНО ✅';
+      Button3.Caption := 'Відмінити';
+      Button3.Enabled := False;
+      Button2.Enabled := False;
+      Button1.Enabled := False;
+      ComboBox2.Enabled := False;
+      ComboBox1.Enabled := False;
+      DBGrid1.ReadOnly := True;
+    end;
   end;
 
   InnerPurchaseEditForm.Show;
+end;
+
+procedure TInnerPurchaseEditForm.N1Click(Sender: TObject);
+begin
+  ADOQuery1.Close;
+  ADOQuery1.SQL.Clear;
+  ADOQuery1.SQL.Add('delete from PurchaseTovList where PTL_Doc = ' + IntToStr(id) + 'and PTL_Tovar = ' + VarToStr(DBGrid1.Fields[0].Value));
+  ADOQuery1.ExecSQL;
+  ADOQuery3.Close;
+  ADOQuery3.Parameters.ParamByName('ID').Value := id;
+  ADOQuery3.Open;
 end;
 
 procedure TInnerPurchaseEditForm.Button1Click(Sender: TObject);
@@ -101,6 +136,15 @@ begin
   Form7.ViewTovarEdit(0);
 end;
 
+procedure TInnerPurchaseEditForm.Button3Click(Sender: TObject);
+begin
+  ADOQuery1.Close;
+  ADOQuery1.Sql.Clear;
+  ADOQuery1.Sql.Add('update Purchase set Pr_IsConifrm = iif(Pr_IsConifrm = 1, 0, 1) where Pr_Id = ' + IntToStr(id));
+  ADOQuery1.ExecSQL;
+  InnerPurchaseEditFormView(id);
+end;
+
 procedure TInnerPurchaseEditForm.ComboBox1Change(Sender: TObject);
 begin
     ADOQuery2.Close;
@@ -109,6 +153,23 @@ begin
     if ComboBox1.ItemIndex > 0 then
       ADOQuery2.Sql.Add(' where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex));
     ADOQuery2.Open;
+end;
+
+procedure TInnerPurchaseEditForm.ComboBox2Change(Sender: TObject);
+begin
+  ADOQuery1.Close;
+  ADOQuery1.Sql.Clear;
+  ADOQuery1.Sql.Add('update Purchase set Pr_Storage = ' + IntToStr(ComboBox2.ItemIndex + 1) + 'where Pr_Id = ' + IntToStr(id));
+  ADOQuery1.ExecSQL;
+end;
+
+procedure TInnerPurchaseEditForm.DBGrid1CellClick(Column: TColumn);
+begin
+  if Column.Index = 0 then
+  begin
+    Form7 := TForm7.Create(Self);
+    Form7.ViewTOvarEdit(DBGrid1.Fields[0].Value);
+  end;
 end;
 
 procedure TInnerPurchaseEditForm.DBGrid2CellClick(Column: TColumn);
@@ -141,7 +202,6 @@ begin
     ComboBox2.Items.Add(ADOQuery1.FieldByName('St_Name').AsString);
     ADOQuery1.Next;
   end;
-  ComboBox2.ItemIndex := 0;
 end;
 
 end.

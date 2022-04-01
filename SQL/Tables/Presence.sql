@@ -1,9 +1,9 @@
 CREATE TABLE Presence(
-  Pr_Id int IDENTITY(1,1) NOT NULL,
-  Pr_Tovar varchar(200) NULL,
-  Pr_Amount varchar(200) NULL,
-  Pr_Storage smallint NOT NULL,
-  
-  PRIMARY KEY (Pr_id)
+  Pr_Tovar smallint NOT NULL,
+  Pr_Amount smallint NOT NULL DEFAULT 0,
+  Pr_Storage smallint NULL
+
+  FOREIGN KEY (Pr_Tovar) REFERENCES Tovar(Tov_Id),
+  FOREIGN KEY (Pr_Storage) REFERENCES Storage(St_Id)
 ) 
 GO

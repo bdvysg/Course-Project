@@ -71,6 +71,16 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         Width = 257
         Height = 24
         TabOrder = 0
+        OnChange = ComboBox2Change
+      end
+      object Button3: TButton
+        Left = 256
+        Top = 64
+        Width = 97
+        Height = 25
+        Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
+        TabOrder = 1
+        OnClick = Button3Click
       end
     end
   end
@@ -81,12 +91,14 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
     Height = 472
     Align = alClient
     DataSource = DataSource3
+    PopupMenu = PopupMenu1
     TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -13
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
@@ -214,5 +226,13 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
       'where PTL_Doc = :ID')
     Left = 177
     Top = 33
+  end
+  object PopupMenu1: TPopupMenu
+    Left = 264
+    Top = 328
+    object N1: TMenuItem
+      Caption = #1042#1080#1076#1072#1083#1080#1090#1080
+      OnClick = N1Click
+    end
   end
 end

@@ -54,6 +54,10 @@ begin
   ADOQuery1.Post;
   ADOQuery2.Open;
   new_id := ADOQuery2.FieldByName('Tov_Id').Value;
+  ADOQuery2.Close;
+  ADOQuery2.SQL.Clear;
+  ADOQuery2.SQL.Add('insert into Presence values(' + IntToStr(new_id) + ', 0, 1)');
+  ADOQuery2.ExecSQL;
   ViewTovarEdit(new_id);
 end;
 
