@@ -70,6 +70,8 @@ begin
     try
       ADOQuery1.Parameters.ParamByName('Id').Value := id;
       ADOQuery1.Open;
+      TNumericField(ADOQuery1.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
+      TNumericField(ADOQuery1.FieldByName('Tov_PriceOpt')).DisplayFormat := '0 грн.';
       Button1.Visible := false;
       Label7.Visible := false;
       DBEdit7.Visible := false;

@@ -80,6 +80,7 @@ begin
     if ComboBox1.ItemIndex > 0 then
       ADOQuery1.Sql.Add(' where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex));
     ADOQuery1.Open;
+    TNumericField(ADOQuery1.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
     Label1.Caption := 'Обрано - ' + IntToStr(ADOQuery1.RecordCount);
 end;
 
@@ -96,6 +97,7 @@ end;
 procedure TForm8.FormCreate(Sender: TObject);
 begin
   ADOQuery1.Open;
+  TNumericField(ADOQuery1.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
   ADOQuery2.Open;
   ADOQuery2.First;
   while not ADOQuery2.Eof do

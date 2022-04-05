@@ -126,10 +126,10 @@ object Form5: TForm5
   object ADOQuery1: TADOQuery
     ConnectionString = 
       'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
-      'fo=False;Initial Catalog=CourseProj;Data Source=DESKTOP-091F74U\' +
-      'SQLEXPRESS;Use Procedure for Prepare=1;Auto Translate=True;Packe' +
-      't Size=4096;Workstation ID=DESKTOP-091F74U;Use Encryption for Da' +
-      'ta=False;Tag with column collation when possible=False;'
+      'fo=False;Initial Catalog=CourseProj;Data Source=BDVYSG\SQLEXPRES' +
+      'S;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=40' +
+      '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False;'
     CursorType = ctStatic
     Parameters = <>
     SQL.Strings = (

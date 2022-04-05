@@ -11,7 +11,8 @@ uses
   TovarEdit in 'Tovar\TovarEdit.pas' {Form7},
   ChangePrice in 'Tovar\ChangePrice.pas' {Form8},
   InnerPurchaseList in 'Tovar\InnerPurchaseList.pas' {InnerPurchaseListForm},
-  InnerPurchaseEdit in 'Tovar\InnerPurchaseEdit.pas' {InnerPurchaseEditForm};
+  InnerPurchaseEdit in 'Tovar\InnerPurchaseEdit.pas' {InnerPurchaseEditForm},
+  PresenceList in 'Place\PresenceList.pas' {PresenceListForm};
 
 {$R *.res}
 
@@ -20,5 +21,6 @@ begin
   Application.MainFormOnTaskbar := True;
   Application.Title := 'Shop';
   Application.CreateForm(TForm2, Form2);
+  Application.CreateForm(TPresenceListForm, PresenceListForm);
   Application.Run;
 end.

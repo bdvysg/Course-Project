@@ -60,9 +60,8 @@ end;
 
 procedure TForm6.FormCreate(Sender: TObject);
 begin
-  if not ADOQuery1.IsEmpty then
-    ADOQuery1.Close;
   ADOQuery1.Open;
+  TNumericField(ADOQuery1.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
 end;
 
 procedure TForm6.N10Click(Sender: TObject);

@@ -29,6 +29,7 @@ object InnerPurchaseListForm: TInnerPurchaseListForm
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
     OnCellClick = DBGrid1CellClick
+    OnDrawColumnCell = DBGrid1DrawColumnCell
     Columns = <
       item
         Alignment = taCenter

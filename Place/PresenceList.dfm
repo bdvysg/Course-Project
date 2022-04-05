@@ -1,25 +1,22 @@
-object Form1: TForm1
+object PresenceListForm: TPresenceListForm
   Left = 0
   Top = 0
-  Caption = 'PersonListForm'
-  ClientHeight = 410
-  ClientWidth = 812
+  ClientHeight = 551
+  ClientWidth = 671
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
-  Menu = MainMenu1
   OldCreateOrder = False
-  OnCreate = FormCreate
   PixelsPerInch = 120
   TextHeight = 16
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 812
-    Height = 410
+    Width = 671
+    Height = 551
     Align = alClient
     DataSource = DataSource1
     TabOrder = 0
@@ -32,44 +29,31 @@ object Form1: TForm1
     Columns = <
       item
         Expanded = False
-        FieldName = 'Pe_Id'
+        FieldName = 'Tov_Id'
         Title.Caption = #1050#1086#1076
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Pe_Name'
-        Title.Caption = #1030#1084#39#1103
-        Width = 78
+        FieldName = 'Tov_Name'
+        Title.Caption = #1053#1072#1079#1074#1072
+        Width = 364
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Pe_SurName'
-        Title.Caption = #1055#1088#1110#1079#1074#1080#1097#1077
-        Width = 94
+        FieldName = 'Tov_Price'
+        Title.Caption = #1062#1110#1085#1072
+        Width = 88
         Visible = True
       end
       item
         Expanded = False
-        FieldName = 'Pe_DateOfBirth'
-        Title.Caption = #1044#1072#1090#1072' '#1085#1072#1088#1086#1076#1078#1077#1085#1085#1103
-        Width = 114
+        FieldName = 'Pr_Amount'
+        Title.Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100
+        Width = 111
         Visible = True
       end>
-  end
-  object MainMenu1: TMainMenu
-    Left = 248
-    Top = 248
-    object some1: TMenuItem
-      Caption = #1054#1085#1086#1074#1080#1090#1080
-      OnClick = some1Click
-    end
-  end
-  object DataSource1: TDataSource
-    DataSet = ADOQuery1
-    Left = 392
-    Top = 120
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
@@ -79,11 +63,26 @@ object Form1: TForm1
       '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
       'column collation when possible=False;'
     CursorType = ctStatic
-    LockType = ltBatchOptimistic
-    Parameters = <>
+    Parameters = <
+      item
+        Name = 'St_Id'
+        Attributes = [paSigned, paNullable]
+        DataType = ftSmallint
+        Precision = 5
+        Size = 2
+        Value = Null
+      end>
     SQL.Strings = (
-      'select * from person')
-    Left = 440
-    Top = 256
+      'select * from Presence '
+      'inner join Storage ON Pr_Storage = St_Id'
+      'inner join Tovar ON Pr_Tovar = Tov_id'
+      'where Pr_Storage = :St_Id')
+    Left = 328
+    Top = 136
+  end
+  object DataSource1: TDataSource
+    DataSet = ADOQuery1
+    Left = 608
+    Top = 96
   end
 end

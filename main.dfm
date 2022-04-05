@@ -3029,6 +3029,60 @@ object Form2: TForm2
         Width = 28
         Height = 28
       end
+      object Button8: TButton
+        Left = 376
+        Top = 80
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 0
+        OnClick = Button8Click
+      end
+      object Button9: TButton
+        Left = 376
+        Top = 114
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 1
+        OnClick = Button9Click
+      end
+      object Button10: TButton
+        Left = 376
+        Top = 148
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 2
+        OnClick = Button10Click
+      end
+      object Button11: TButton
+        Left = 376
+        Top = 182
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 3
+        OnClick = Button11Click
+      end
+      object Button12: TButton
+        Left = 376
+        Top = 216
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 4
+        OnClick = Button12Click
+      end
+      object Button13: TButton
+        Left = 376
+        Top = 250
+        Width = 121
+        Height = 28
+        Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
+        TabOrder = 5
+        OnClick = Button13Click
+      end
     end
     object TabSheet5: TTabSheet
       Caption = #1040#1085#1072#1083#1110#1079

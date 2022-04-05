@@ -5,7 +5,7 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.StdCtrls,
-  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit, Vcl.Menus;
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit, Vcl.Menus, ComObj;
 
 type
   TInnerPurchaseEditForm = class(TForm)
@@ -27,6 +27,7 @@ type
     Button3: TButton;
     PopupMenu1: TPopupMenu;
     N1: TMenuItem;
+    Button4: TButton;
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure DBGrid2CellClick(Column: TColumn);
@@ -36,6 +37,7 @@ type
     procedure Button3Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure N1Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -145,6 +147,19 @@ begin
   InnerPurchaseEditFormView(id);
 end;
 
+procedure TInnerPurchaseEditForm.Button4Click(Sender: TObject);
+var MyExcel: OleVariant;
+    Sheet: OLEVariant;
+begin
+  const ExcelApp = 'Excel.Application';
+  MyExcel:=CreateOleObject(ExcelApp);
+  MyExcel.WorkBooks.Add;
+  Sheet:=MyExcel.ActiveWorkbook.ActiveSheet;
+  Sheet.Range['A1:F1'].Merge;
+  Sheet.Cells[1, 1] := 'К-во';
+  MyExcel.Visible := true;
+end;
+
 procedure TInnerPurchaseEditForm.ComboBox1Change(Sender: TObject);
 begin
     ADOQuery2.Close;
@@ -153,6 +168,7 @@ begin
     if ComboBox1.ItemIndex > 0 then
       ADOQuery2.Sql.Add(' where Dep_Id = ' + IntToStr(ComboBox1.ItemIndex));
     ADOQuery2.Open;
+    TNumericField(ADOQuery2.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
 end;
 
 procedure TInnerPurchaseEditForm.ComboBox2Change(Sender: TObject);
@@ -185,6 +201,7 @@ procedure TInnerPurchaseEditForm.FormCreate(Sender: TObject);
 begin
   ADOQuery1.Open;
   ADOQuery2.Open;
+  TNumericField(ADOQuery2.FieldByName('Tov_Price')).DisplayFormat := '0 грн.';
   ADOQuery1.First;
   while not ADOQuery1.Eof do
   begin

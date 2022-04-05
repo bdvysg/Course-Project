@@ -19,6 +19,8 @@ type
     procedure FormCreate(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
+    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
+      DataCol: Integer; Column: TColumn; State: TGridDrawState);
   private
     { Private declarations }
   public
@@ -36,6 +38,16 @@ procedure TInnerPurchaseListForm.DBGrid1CellClick(Column: TColumn);
 begin
   InnerPurchaseEditForm := TInnerPurchaseEditForm.Create(Self);
   InnerPurchaseEditForm.InnerPurchaseEditFormView(DBGrid1.Fields[0].Value);
+end;
+
+procedure TInnerPurchaseListForm.DBGrid1DrawColumnCell(Sender: TObject;
+  const Rect: TRect; DataCol: Integer; Column: TColumn; State: TGridDrawState);
+begin
+  if Column.Field.DataSet.FieldByName('Pr_IsConifrm').AsString = 'так' then
+  begin
+    DBGrid1.canvas.brush.color := clMedGray; //не имеет фокуса
+    DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
+  end;
 end;
 
 procedure TInnerPurchaseListForm.FormCreate(Sender: TObject);

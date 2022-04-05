@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.jpeg, InnerPurchaseList, System.Net.URLClient,
   System.Net.HttpClient, System.Net.HttpClientComponent, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, IdTelnet, IdRawBase, IdRawClient,
-  IdIcmpClient;
+  IdIcmpClient, PresenceList;
 
 type
   TForm2 = class(TForm)
@@ -51,6 +51,12 @@ type
     Image7: TImage;
     Timer1: TTimer;
     IdIcmpClient1: TIdIcmpClient;
+    Button8: TButton;
+    Button9: TButton;
+    Button10: TButton;
+    Button11: TButton;
+    Button12: TButton;
+    Button13: TButton;
     procedure MainBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EmployeeBtnClick(Sender: TObject);
@@ -64,6 +70,12 @@ type
     procedure Button6Click(Sender: TObject);
     procedure Button7Click(Sender: TObject);
     procedure Timer1Timer(Sender: TObject);
+    procedure Button8Click(Sender: TObject);
+    procedure Button9Click(Sender: TObject);
+    procedure Button10Click(Sender: TObject);
+    procedure Button11Click(Sender: TObject);
+    procedure Button12Click(Sender: TObject);
+    procedure Button13Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -105,6 +117,30 @@ begin
   Form6.Show;
 end;
 
+procedure TForm2.Button10Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(3);
+end;
+
+procedure TForm2.Button11Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(4);
+end;
+
+procedure TForm2.Button12Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(5);
+end;
+
+procedure TForm2.Button13Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(6);
+end;
+
 procedure TForm2.Button1Click(Sender: TObject);
 begin
   Form2.Close;
@@ -138,6 +174,18 @@ procedure TForm2.Button7Click(Sender: TObject);
 begin
   InnerPurchaseListForm := TInnerPurchaseListForm.Create(Self);
   InnerPurchaseListForm.Show;
+end;
+
+procedure TForm2.Button8Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(1);
+end;
+
+procedure TForm2.Button9Click(Sender: TObject);
+begin
+  PresenceListForm := TPresenceListForm.Create(Self);
+  PresenceListForm.ViewPresenceList(2);
 end;
 
 procedure TForm2.EmployeeBtnClick(Sender: TObject);
