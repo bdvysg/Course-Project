@@ -5,7 +5,8 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Data.Win.ADODB, Vcl.StdCtrls,
-  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit, Vcl.Menus, ComObj;
+  Vcl.DBCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ExtCtrls, TovarEdit, Vcl.Menus, ComObj,
+  A7Rep;
 
 type
   TInnerPurchaseEditForm = class(TForm)
@@ -24,20 +25,24 @@ type
     DataSource3: TDataSource;
     ADOQuery3: TADOQuery;
     ComboBox2: TComboBox;
-    Button3: TButton;
     PopupMenu1: TPopupMenu;
     N1: TMenuItem;
-    Button4: TButton;
+    Edit1: TEdit;
+    Button5: TButton;
+    MainMenu1: TMainMenu;
+    N2: TMenuItem;
+    N3: TMenuItem;
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure DBGrid2CellClick(Column: TColumn);
     procedure Button2Click(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
-    procedure Button3Click(Sender: TObject);
     procedure DBGrid1CellClick(Column: TColumn);
     procedure N1Click(Sender: TObject);
-    procedure Button4Click(Sender: TObject);
+    procedure N2Click(Sender: TObject);
+    procedure N3Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
 
   private
     { Private declarations }
@@ -57,7 +62,7 @@ implementation
 procedure TInnerPurchaseEditForm.InnerPurchaseEditFormView(id_ : integer);
 begin
   id := id_;
-  Button3.Caption := 'Підтвердити';
+  n2.Caption := 'Підтвердити';
   if id = 0 then
   begin
     ADOQuery1.Close;
@@ -81,13 +86,21 @@ begin
     ADOQuery1.SQL.Add('select * from Purchase where Pr_Id = ' + IntToStr(id));
     ADOQuery1.Open;
     ComboBox2.ItemIndex := ADOQuery1.FieldByName('Pr_Storage').Value - 1;
+    if ADOQuery3.FieldByName('Pr_Seller').AsString <> '' then
+      Button5.Caption := 'Редагувати';
+    Edit1.Text := ADOQuery3.FieldByName('Pr_Seller').AsString;
+    TNumericField(ADOQuery3.FieldByName('Summa')).DisplayFormat := '0 грн.';
+    TNumericField(ADOQuery3.FieldByName('Tov_PriceOpt')).DisplayFormat := '0 грн.';
+    TNumericField(ADOQuery2.FieldByName('Tov_PriceOpt')).DisplayFormat := '0 грн.';
     if ADOQuery1.FieldByName('Pr_IsConifrm').Value = True then
     begin
       InnerPurchaseEditForm.Caption := 'Документ закупки - ' + IntToStr(id) + '  ЗАТВЕРДЖЕНО ✅';
-      Button3.Caption := 'Відмінити';
-      Button3.Enabled := False;
+      N2.Caption := 'Відмінити';
+      N2.Enabled := False;
       Button2.Enabled := False;
       Button1.Enabled := False;
+      Button5.Enabled := False;
+      Edit1.Enabled := False;
       ComboBox2.Enabled := False;
       ComboBox1.Enabled := False;
       DBGrid1.ReadOnly := True;
@@ -106,6 +119,49 @@ begin
   ADOQuery3.Close;
   ADOQuery3.Parameters.ParamByName('ID').Value := id;
   ADOQuery3.Open;
+end;
+
+procedure TInnerPurchaseEditForm.N2Click(Sender: TObject);
+begin
+  ADOQuery1.Close;
+  ADOQuery1.Sql.Clear;
+  ADOQuery1.Sql.Add('update Purchase set Pr_IsConifrm = iif(Pr_IsConifrm = 1, 0, 1) where Pr_Id = ' + IntToStr(id));
+  ADOQuery1.ExecSQL;
+  InnerPurchaseEditFormView(id);
+end;
+
+procedure TInnerPurchaseEditForm.N3Click(Sender: TObject);
+var
+  i : Integer;
+  s, sum : Double;
+  Rep: TA7Rep;
+begin
+  Rep := TA7Rep.Create(nil);
+  Rep.OpenTemplate('C:\Users\bdvys\Desktop\CourseProject\Excel\Товарна накладна.xls');
+  Rep.PasteBand('Title');
+  Rep.SetValue('#VENDOR#',ADOQuery3.FieldByName('Pr_Seller').AsString);
+  Rep.SetValue('#BUY#','ООО Товари для дому');
+  Rep.SetValueF('#D#', ADOQuery3.FieldByName('Pr_DateConfirmStr').AsString);
+  Rep.SetValue('#NOTE#','-');
+  //Rep.SetComment('#ID#','Здесь мы комментируем если нужно'); // Обязательно делаем комментарий ПЕРЕД тем как вставим значение в ячейку, иначе значение затрет метку и SetComment не найдет куда писать коммент
+  Rep.SetValue('#ID#', ADOQuery3.FieldByName('Pr_Id').AsString);
+  ADOQuery3.First;
+  for i := 1 to ADOQuery3.recordcount do
+  begin
+    Rep.PasteBand('Line');
+    Rep.SetValue('#N#', i);
+    Rep.SetValue('#NAME#', ADOQuery3.FieldByName('Tov_Name').AsString);
+    Rep.SetValue('#UNIT#', 'шт.');
+    Rep.SetValue('#QUANT#', ADOQuery3.FieldByName('PTL_Amount').AsString);
+    s := s + ADOQuery3.FieldByName('Tov_PriceOpt').AsFloat;
+    Rep.SetValue('#PRICE#', s);
+    sum := sum + s;
+    ADOQuery3.Next;
+  end;
+  Rep.PasteBand('Foot');
+  Rep.SetValue('#SUMMA#', sum);
+  Rep.SetValue('#CURRENT_DATE#', DateToStr(now));
+  Rep.Show;
 end;
 
 procedure TInnerPurchaseEditForm.Button1Click(Sender: TObject);
@@ -138,26 +194,12 @@ begin
   Form7.ViewTovarEdit(0);
 end;
 
-procedure TInnerPurchaseEditForm.Button3Click(Sender: TObject);
+procedure TInnerPurchaseEditForm.Button5Click(Sender: TObject);
 begin
   ADOQuery1.Close;
-  ADOQuery1.Sql.Clear;
-  ADOQuery1.Sql.Add('update Purchase set Pr_IsConifrm = iif(Pr_IsConifrm = 1, 0, 1) where Pr_Id = ' + IntToStr(id));
+  ADOQuery1.SQL.Clear;
+  ADOQuery1.SQL.Add('update Purchase set Pr_Seller = ''' + edit1.Text + ''' where Pr_Id = ' + IntToStr(id));
   ADOQuery1.ExecSQL;
-  InnerPurchaseEditFormView(id);
-end;
-
-procedure TInnerPurchaseEditForm.Button4Click(Sender: TObject);
-var MyExcel: OleVariant;
-    Sheet: OLEVariant;
-begin
-  const ExcelApp = 'Excel.Application';
-  MyExcel:=CreateOleObject(ExcelApp);
-  MyExcel.WorkBooks.Add;
-  Sheet:=MyExcel.ActiveWorkbook.ActiveSheet;
-  Sheet.Range['A1:F1'].Merge;
-  Sheet.Cells[1, 1] := 'К-во';
-  MyExcel.Visible := true;
 end;
 
 procedure TInnerPurchaseEditForm.ComboBox1Change(Sender: TObject);

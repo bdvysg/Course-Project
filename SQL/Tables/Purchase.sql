@@ -9,3 +9,7 @@ CREATE TABLE Purchase(
   FOREIGN KEY (Pr_Storage) REFERENCES Storage(St_Id)
 )
 GO
+
+alter table Purchase
+add
+ Pr_Seller varchar(200) null

@@ -2916,8 +2916,8 @@ object Form2: TForm2
         ExplicitWidth = 117
       end
       object Label6: TLabel
-        Left = 72
-        Top = 80
+        Left = 146
+        Top = 160
         Width = 152
         Height = 28
         Caption = #1043#1086#1083#1086#1074#1085#1080#1081' '#1086#1092#1110#1089
@@ -2929,14 +2929,15 @@ object Form2: TForm2
         ParentFont = False
       end
       object Image2: TImage
-        Left = 320
-        Top = 80
+        Left = 392
+        Top = 160
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Label7: TLabel
-        Left = 72
-        Top = 114
+        Left = 144
+        Top = 194
         Width = 233
         Height = 28
         Caption = #1052#1072#1075#1072#1079#1080#1085' '#1075#1086#1089#1087'. '#1090#1086#1074#1072#1088#1110#1074
@@ -2948,20 +2949,22 @@ object Form2: TForm2
         ParentFont = False
       end
       object Image3: TImage
-        Left = 320
-        Top = 114
+        Left = 392
+        Top = 194
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Image4: TImage
-        Left = 320
-        Top = 148
+        Left = 392
+        Top = 228
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Label8: TLabel
-        Left = 72
-        Top = 148
+        Left = 144
+        Top = 228
         Width = 178
         Height = 28
         Caption = #1058#1086#1074#1072#1088#1080' '#1076#1083#1103' '#1076#1086#1084#1091
@@ -2973,14 +2976,15 @@ object Form2: TForm2
         ParentFont = False
       end
       object Image5: TImage
-        Left = 320
-        Top = 182
+        Left = 392
+        Top = 262
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Label9: TLabel
-        Left = 72
-        Top = 182
+        Left = 144
+        Top = 262
         Width = 177
         Height = 28
         Caption = #1052#1091#1088#1072#1096#1082#1072'-'#1084#1072#1088#1082#1077#1090
@@ -2992,14 +2996,15 @@ object Form2: TForm2
         ParentFont = False
       end
       object Image6: TImage
-        Left = 320
-        Top = 216
+        Left = 392
+        Top = 296
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Label10: TLabel
-        Left = 72
-        Top = 216
+        Left = 144
+        Top = 296
         Width = 154
         Height = 28
         Caption = '1000 '#1076#1088#1110#1073#1085#1080#1094#1100
@@ -3011,8 +3016,8 @@ object Form2: TForm2
         ParentFont = False
       end
       object Label11: TLabel
-        Left = 72
-        Top = 250
+        Left = 144
+        Top = 330
         Width = 128
         Height = 28
         Caption = #1045#1082#1086'-'#1089#1077#1075#1084#1077#1085#1090
@@ -3024,14 +3029,15 @@ object Form2: TForm2
         ParentFont = False
       end
       object Image7: TImage
-        Left = 320
-        Top = 250
+        Left = 392
+        Top = 330
         Width = 28
         Height = 28
+        Proportional = True
       end
       object Button8: TButton
-        Left = 376
-        Top = 80
+        Left = 448
+        Top = 160
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
@@ -3039,8 +3045,8 @@ object Form2: TForm2
         OnClick = Button8Click
       end
       object Button9: TButton
-        Left = 376
-        Top = 114
+        Left = 448
+        Top = 194
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
@@ -3048,8 +3054,8 @@ object Form2: TForm2
         OnClick = Button9Click
       end
       object Button10: TButton
-        Left = 376
-        Top = 148
+        Left = 448
+        Top = 228
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
@@ -3057,8 +3063,8 @@ object Form2: TForm2
         OnClick = Button10Click
       end
       object Button11: TButton
-        Left = 376
-        Top = 182
+        Left = 448
+        Top = 262
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
@@ -3066,8 +3072,8 @@ object Form2: TForm2
         OnClick = Button11Click
       end
       object Button12: TButton
-        Left = 376
-        Top = 216
+        Left = 448
+        Top = 296
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
@@ -3075,13 +3081,61 @@ object Form2: TForm2
         OnClick = Button12Click
       end
       object Button13: TButton
-        Left = 376
-        Top = 250
+        Left = 448
+        Top = 330
         Width = 121
         Height = 28
         Caption = #1053#1072#1103#1074#1085#1110#1089#1090#1100' '#1090#1086#1074#1072#1088#1091
         TabOrder = 5
         OnClick = Button13Click
+      end
+      object Button14: TButton
+        Left = 575
+        Top = 160
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 6
+      end
+      object Button15: TButton
+        Left = 575
+        Top = 194
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 7
+      end
+      object Button16: TButton
+        Left = 575
+        Top = 231
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 8
+      end
+      object Button17: TButton
+        Left = 575
+        Top = 265
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 9
+      end
+      object Button18: TButton
+        Left = 575
+        Top = 296
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 10
+      end
+      object Button19: TButton
+        Left = 575
+        Top = 330
+        Width = 122
+        Height = 28
+        Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        TabOrder = 11
       end
     end
     object TabSheet5: TTabSheet
@@ -3178,15 +3232,15 @@ object Form2: TForm2
     Font.Style = []
     ParentFont = False
     TabOrder = 6
+    OnClick = Button5Click
   end
   object Timer1: TTimer
-    Interval = 500
+    Interval = 3000
     OnTimer = Timer1Timer
     Left = 620
     Top = 379
   end
   object IdIcmpClient1: TIdIcmpClient
-    Host = '172.217.16.36'
     ReceiveTimeout = 100
     Protocol = 1
     ProtocolIPv6 = 58

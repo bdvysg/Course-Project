@@ -9,6 +9,7 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
   Font.Height = -13
   Font.Name = 'Tahoma'
   Font.Style = []
+  Menu = MainMenu1
   OldCreateOrder = False
   OnCreate = FormCreate
   PixelsPerInch = 120
@@ -73,23 +74,21 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         TabOrder = 0
         OnChange = ComboBox2Change
       end
-      object Button3: TButton
+      object Edit1: TEdit
         Left = 256
-        Top = 64
-        Width = 97
+        Top = 54
+        Width = 121
+        Height = 24
+        TabOrder = 1
+      end
+      object Button5: TButton
+        Left = 392
+        Top = 54
+        Width = 105
         Height = 25
         Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
-        TabOrder = 1
-        OnClick = Button3Click
-      end
-      object Button4: TButton
-        Left = 48
-        Top = 24
-        Width = 75
-        Height = 25
-        Caption = 'Button4'
         TabOrder = 2
-        OnClick = Button4Click
+        OnClick = Button5Click
       end
     end
   end
@@ -119,7 +118,7 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         Expanded = False
         FieldName = 'Tov_Name'
         Title.Caption = #1058#1086#1074#1072#1088
-        Width = 348
+        Width = 237
         Visible = True
       end
       item
@@ -128,6 +127,18 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         FieldName = 'PTL_Amount'
         Title.Caption = #1050#1110#1083#1100#1082#1110#1089#1090#1100
         Width = 65
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Tov_PriceOpt'
+        Title.Caption = #1062#1110#1085#1072
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Summa'
+        Title.Caption = #1057#1091#1084#1084#1072
         Visible = True
       end>
   end
@@ -230,8 +241,14 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         Value = Null
       end>
     SQL.Strings = (
-      'select * from PurchaseTovList'
+      'select *, '
+      
+        'case isnull(Pr_DateConfirm, '#39#39') when '#39#39' then '#39#39' else CONVERT(var' +
+        'char, Pr_DateConfirm, 23) end as Pr_DateConfirmStr,'
+      'Tov_PriceOpt * PTL_Amount as Summa'
+      'from PurchaseTovList'
       'inner join Tovar on Tov_Id = PTL_Tovar'
+      'inner join Purchase on Pr_Id = PTL_Doc'
       'where PTL_Doc = :ID')
     Left = 177
     Top = 33
@@ -242,6 +259,18 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
     object N1: TMenuItem
       Caption = #1042#1080#1076#1072#1083#1080#1090#1080
       OnClick = N1Click
+    end
+  end
+  object MainMenu1: TMainMenu
+    Left = 304
+    Top = 192
+    object N2: TMenuItem
+      Caption = #1047#1072#1090#1074#1077#1088#1076#1080#1090#1080
+      OnClick = N2Click
+    end
+    object N3: TMenuItem
+      Caption = #1056#1086#1079#1076#1088#1091#1082#1091#1074#1072#1090#1080' '#1085#1072#1082#1083#1072#1076#1085#1091
+      OnClick = N3Click
     end
   end
 end

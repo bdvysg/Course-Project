@@ -57,6 +57,12 @@ type
     Button11: TButton;
     Button12: TButton;
     Button13: TButton;
+    Button14: TButton;
+    Button15: TButton;
+    Button16: TButton;
+    Button17: TButton;
+    Button18: TButton;
+    Button19: TButton;
     procedure MainBtnClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure EmployeeBtnClick(Sender: TObject);
@@ -76,6 +82,7 @@ type
     procedure Button11Click(Sender: TObject);
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -101,9 +108,47 @@ end;
 
 procedure TForm2.Timer1Timer(Sender: TObject);
 begin
+  IdIcmpClient1.host := '172.217.16.36';
   IdIcmpClient1.ping;
-  label3.caption := 'Время до хоста: '+ inttostr(IdIcmpClient1.ReplyStatus.MsRoundTripTime) + 'ms';
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image2.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image2.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
 
+  IdIcmpClient1.host := '172.217.16.36';
+  IdIcmpClient1.ping;
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image3.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image3.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
+
+  IdIcmpClient1.host := '172.217.16.36';
+  IdIcmpClient1.ping;
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image4.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image4.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
+
+  IdIcmpClient1.host := '172.217.16.36';
+  IdIcmpClient1.ping;
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image5.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image5.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
+
+  IdIcmpClient1.host := '172.217.16.36';
+  IdIcmpClient1.ping;
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image6.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image6.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
+
+  IdIcmpClient1.host := '172.217.16.36';
+  IdIcmpClient1.ping;
+  if IdIcmpClient1.ReplyStatus.ReplyStatusType = rsEcho then
+    Image7.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\green_dot.png')
+  else
+    Image7.Picture.LoadFromFile('C:\Users\bdvys\Desktop\CourseProject\assets\grey_dot.png');
 end;
 
 procedure TForm2.TovarsBtnClick(Sender: TObject);
@@ -162,6 +207,11 @@ procedure TForm2.Button4Click(Sender: TObject);
 begin
   Form3 := Tform3.Create(Application.MainForm);
   Form3.AddPerson;
+end;
+
+procedure TForm2.Button5Click(Sender: TObject);
+begin
+  PageControl1.ActivePageIndex:= 4;
 end;
 
 procedure TForm2.Button6Click(Sender: TObject);

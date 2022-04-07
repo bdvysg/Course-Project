@@ -9,13 +9,9 @@ CREATE TABLE Person(
   Pe_Posistion varchar(100) NULL,
   Pe_PlaceOfWork smallint NULL,
   Pe_Wage money NULL,
-  
-  CONSTRAINT PK_Person PRIMARY KEY (Pe_Id)
-)
-GO
+  Pe_Photo varchar(2000) NULL,  --https://boredhumans.b-cdn.net/faces2/345.jpg
 
-ALTER TABLE Person
-ADD
-  CONSTRAINT FK_PlaceOfWork FOREIGN KEY (Pe_PlaceOfWork) REFERENCES Place(Pl_Id),
-  Pe_Photo varbinary(max) NULL
+  FOREIGN KEY (Pe_PlaceOfWork) REFERENCES Place(Pl_Id),
+  PRIMARY KEY (Pe_Id)
+)
 GO
