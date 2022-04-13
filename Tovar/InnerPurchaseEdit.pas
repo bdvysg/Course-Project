@@ -153,8 +153,8 @@ begin
     Rep.SetValue('#NAME#', ADOQuery3.FieldByName('Tov_Name').AsString);
     Rep.SetValue('#UNIT#', 'шт.');
     Rep.SetValue('#QUANT#', ADOQuery3.FieldByName('PTL_Amount').AsString);
-    s := s + ADOQuery3.FieldByName('Tov_PriceOpt').AsFloat;
-    Rep.SetValue('#PRICE#', s);
+    s := ADOQuery3.FieldByName('Tov_PriceOpt').AsFloat * ADOQuery3.FieldByName('PTL_Amount').AsFloat;
+    Rep.SetValue('#PRICE#', ADOQuery3.FieldByName('Tov_PriceOpt').AsFloat);
     sum := sum + s;
     ADOQuery3.Next;
   end;

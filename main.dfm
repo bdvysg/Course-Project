@@ -45,7 +45,7 @@ object Form2: TForm2
       object Label1: TLabel
         Left = 0
         Top = 0
-        Width = 732
+        Width = 99
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -56,7 +56,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 99
       end
       object Image1: TImage
         Left = 0
@@ -2808,7 +2807,7 @@ object Form2: TForm2
       object Label2: TLabel
         Left = 0
         Top = 0
-        Width = 732
+        Width = 141
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -2819,7 +2818,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 141
       end
       object Button2: TButton
         Left = 16
@@ -2855,7 +2853,7 @@ object Form2: TForm2
       object Label4: TLabel
         Left = 0
         Top = 0
-        Width = 732
+        Width = 85
         Height = 28
         Align = alTop
         Alignment = taCenter
@@ -2866,7 +2864,6 @@ object Form2: TForm2
         Font.Name = 'Tahoma'
         Font.Style = [fsBold]
         ParentFont = False
-        ExplicitWidth = 85
       end
       object tovars: TButton
         Left = 88
@@ -3095,6 +3092,7 @@ object Form2: TForm2
         Width = 122
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
+        Enabled = False
         TabOrder = 6
       end
       object Button15: TButton
@@ -3104,6 +3102,7 @@ object Form2: TForm2
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
         TabOrder = 7
+        OnClick = Button15Click
       end
       object Button16: TButton
         Left = 575
@@ -3112,6 +3111,7 @@ object Form2: TForm2
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
         TabOrder = 8
+        OnClick = Button16Click
       end
       object Button17: TButton
         Left = 575
@@ -3120,6 +3120,7 @@ object Form2: TForm2
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
         TabOrder = 9
+        OnClick = Button17Click
       end
       object Button18: TButton
         Left = 575
@@ -3128,6 +3129,7 @@ object Form2: TForm2
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
         TabOrder = 10
+        OnClick = Button18Click
       end
       object Button19: TButton
         Left = 575
@@ -3136,6 +3138,7 @@ object Form2: TForm2
         Height = 28
         Caption = #1055#1077#1088#1077#1075#1083#1103#1085#1091#1090#1080' '#1095#1077#1082#1080
         TabOrder = 11
+        OnClick = Button19Click
       end
     end
     object TabSheet5: TTabSheet

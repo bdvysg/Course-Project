@@ -26,6 +26,7 @@ object SalesListForm: TSalesListForm
     TitleFont.Height = -13
     TitleFont.Name = 'Tahoma'
     TitleFont.Style = []
+    OnCellClick = DBGrid1CellClick
     Columns = <
       item
         Expanded = False
@@ -36,7 +37,7 @@ object SalesListForm: TSalesListForm
       item
         Expanded = False
         FieldName = 'PM_Name'
-        Title.Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091
+        Title.Caption = #1042#1080#1076' '#1086#1087#1083#1072#1090#1080
         Width = 111
         Visible = True
       end
@@ -76,5 +77,36 @@ object SalesListForm: TSalesListForm
       'where SL_Place = :ID')
     Left = 448
     Top = 296
+  end
+  object ADOQuery2: TADOQuery
+    ConnectionString = 
+      'Provider=SQLOLEDB.1;Integrated Security=SSPI;Persist Security In' +
+      'fo=False;Initial Catalog=CourseProj;Data Source=BDVYSG\SQLEXPRES' +
+      'S;Use Procedure for Prepare=1;Auto Translate=True;Packet Size=40' +
+      '96;Workstation ID=BDVYSG;Use Encryption for Data=False;Tag with ' +
+      'column collation when possible=False;'
+    Parameters = <
+      item
+        Name = 'ID'
+        Attributes = [paSigned]
+        DataType = ftSmallint
+        Precision = 5
+        Size = 2
+        Value = Null
+      end>
+    SQL.Strings = (
+      'select * from Sales'
+      'inner join SalesTovList on SL_Id = STL_Doc'
+      'inner join Place on SL_Place = Pl_Id'
+      'inner join Tovar on STL_Tovar = Tov_Id'
+      'where SL_Id = :ID'
+      '')
+    Left = 352
+    Top = 320
+  end
+  object DataSource2: TDataSource
+    DataSet = ADOQuery2
+    Left = 336
+    Top = 440
   end
 end

@@ -9,7 +9,7 @@ uses
   Vcl.Imaging.jpeg, InnerPurchaseList, System.Net.URLClient,
   System.Net.HttpClient, System.Net.HttpClientComponent, IdBaseComponent,
   IdComponent, IdTCPConnection, IdTCPClient, IdTelnet, IdRawBase, IdRawClient,
-  IdIcmpClient, PresenceList;
+  IdIcmpClient, PresenceList, Saleslist;
 
 type
   TForm2 = class(TForm)
@@ -83,6 +83,11 @@ type
     procedure Button12Click(Sender: TObject);
     procedure Button13Click(Sender: TObject);
     procedure Button5Click(Sender: TObject);
+    procedure Button15Click(Sender: TObject);
+    procedure Button16Click(Sender: TObject);
+    procedure Button17Click(Sender: TObject);
+    procedure Button18Click(Sender: TObject);
+    procedure Button19Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -184,6 +189,36 @@ procedure TForm2.Button13Click(Sender: TObject);
 begin
   PresenceListForm := TPresenceListForm.Create(Self);
   PresenceListForm.ViewPresenceList(6);
+end;
+
+procedure TForm2.Button15Click(Sender: TObject);
+begin
+  SalesListForm := TSalesListForm.Create(nil);
+  SalesListForm.SalesListView(2);
+end;
+
+procedure TForm2.Button16Click(Sender: TObject);
+begin
+  SalesListForm := TSalesListForm.Create(nil);
+  SalesListForm.SalesListView(3);
+end;
+
+procedure TForm2.Button17Click(Sender: TObject);
+begin
+  SalesListForm := TSalesListForm.Create(nil);
+  SalesListForm.SalesListView(4);
+end;
+
+procedure TForm2.Button18Click(Sender: TObject);
+begin
+  SalesListForm := TSalesListForm.Create(nil);
+  SalesListForm.SalesListView(5);
+end;
+
+procedure TForm2.Button19Click(Sender: TObject);
+begin
+  SalesListForm := TSalesListForm.Create(nil);
+  SalesListForm.SalesListView(6);
 end;
 
 procedure TForm2.Button1Click(Sender: TObject);

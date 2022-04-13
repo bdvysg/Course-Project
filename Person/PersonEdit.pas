@@ -91,6 +91,7 @@ begin
     Form3.Caption := 'Реєстрація нового працівника';
     Button2.Visible := True;
     Button1.Visible := False;
+    ADOQuery1.Active := True;
     Form3.Show;
   except
 

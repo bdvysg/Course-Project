@@ -45,7 +45,7 @@ procedure TInnerPurchaseListForm.DBGrid1DrawColumnCell(Sender: TObject;
 begin
   if Column.Field.DataSet.FieldByName('Pr_IsConifrm').AsString = 'так' then
   begin
-    DBGrid1.canvas.brush.color := clMedGray; //не имеет фокуса
+    DBGrid1.canvas.brush.color := cl3DLight; //не имеет фокуса
     DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
   end;
 end;
