@@ -28,9 +28,29 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
       Height = 113
       Align = alRight
       TabOrder = 0
+      object Label1: TLabel
+        Left = 352
+        Top = 13
+        Width = 82
+        Height = 16
+        Caption = #1043#1088#1091#1087#1072' '#1090#1086#1074#1072#1088#1110#1074
+      end
+      object Label2: TLabel
+        Left = 160
+        Top = 84
+        Width = 170
+        Height = 24
+        Caption = #1044#1086#1089#1090#1091#1087#1085#1110' '#1090#1086#1074#1072#1088#1080
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
       object Button1: TButton
-        Left = 24
-        Top = 64
+        Left = 6
+        Top = 83
         Width = 75
         Height = 25
         Caption = #1044#1086#1076#1072#1090#1080
@@ -38,17 +58,17 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         OnClick = Button1Click
       end
       object Button2: TButton
-        Left = 160
-        Top = 64
-        Width = 137
+        Left = 328
+        Top = 65
+        Width = 145
         Height = 25
         Caption = #1047#1072#1088#1077#1108#1089#1090#1088#1091#1074#1072#1090#1080' '#1090#1086#1074#1072#1088
         TabOrder = 1
         OnClick = Button2Click
       end
       object ComboBox1: TComboBox
-        Left = 216
-        Top = 24
+        Left = 328
+        Top = 35
         Width = 145
         Height = 24
         ItemIndex = 0
@@ -66,8 +86,35 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
       Height = 113
       Align = alClient
       TabOrder = 1
+      object Label3: TLabel
+        Left = 168
+        Top = 84
+        Width = 186
+        Height = 24
+        Caption = #1058#1086#1074#1072#1088#1080' '#1085#1072#1082#1083#1072#1076#1085#1086#1111
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -20
+        Font.Name = 'Tahoma'
+        Font.Style = [fsBold]
+        ParentFont = False
+      end
+      object Label4: TLabel
+        Left = 88
+        Top = 2
+        Width = 35
+        Height = 16
+        Caption = #1057#1082#1083#1072#1076
+      end
+      object Label5: TLabel
+        Left = 360
+        Top = 2
+        Width = 82
+        Height = 16
+        Caption = #1055#1086#1089#1090#1072#1095#1072#1083#1100#1085#1080#1082
+      end
       object ComboBox2: TComboBox
-        Left = 256
+        Left = 0
         Top = 24
         Width = 257
         Height = 24
@@ -75,15 +122,15 @@ object InnerPurchaseEditForm: TInnerPurchaseEditForm
         OnChange = ComboBox2Change
       end
       object Edit1: TEdit
-        Left = 256
-        Top = 54
-        Width = 121
+        Left = 290
+        Top = 24
+        Width = 223
         Height = 24
         TabOrder = 1
       end
       object Button5: TButton
-        Left = 392
-        Top = 54
+        Left = 408
+        Top = 83
         Width = 105
         Height = 25
         Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080

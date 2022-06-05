@@ -33,30 +33,35 @@ object Form6: TForm6
       item
         Expanded = False
         FieldName = 'Tov_Id'
+        Title.Caption = #1050#1086#1076
         Width = 94
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Name'
+        Title.Caption = #1053#1072#1079#1074#1072
         Width = 142
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Ms_Name'
+        Title.Caption = #1054#1076'. '#1074#1080#1084#1110#1088#1091
         Width = 99
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Tov_Price'
+        Title.Caption = #1062#1110#1085#1072
         Width = 143
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'Dep_Name'
+        Title.Caption = #1043#1088#1091#1087#1072
         Width = 172
         Visible = True
       end>

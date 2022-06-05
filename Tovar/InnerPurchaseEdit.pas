@@ -32,6 +32,11 @@ type
     MainMenu1: TMainMenu;
     N2: TMenuItem;
     N3: TMenuItem;
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     procedure FormCreate(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure DBGrid2CellClick(Column: TColumn);

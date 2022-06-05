@@ -5,7 +5,9 @@ interface
 uses
   Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Data.Win.ADODB, Data.DB,
-  Vcl.Mask, Vcl.DBCtrls, Vcl.ExtCtrls, EditWage, Vcl.Menus;
+  Vcl.Mask, Vcl.DBCtrls, Vcl.ExtCtrls, EditWage, Vcl.Menus,
+  System.Net.URLClient, System.Net.HttpClient, System.Net.HttpClientComponent, JPEG,
+  Vcl.ComCtrls;
 
 type
   TForm3 = class(TForm)
@@ -32,11 +34,16 @@ type
     DBEdit9: TDBEdit;
     Label11: TLabel;
     DBEdit10: TDBEdit;
-    DBImage1: TDBImage;
     Button1: TButton;
     MainMenu1: TMainMenu;
     N1: TMenuItem;
     Button2: TButton;
+    Image1: TImage;
+    NetHTTPClient1: TNetHTTPClient;
+    DateTimePicker1: TDateTimePicker;
+    DateTimePicker2: TDateTimePicker;
+    Label12: TLabel;
+    DBEdit11: TDBEdit;
     procedure Button1Click(Sender: TObject);
     procedure N1Click(Sender: TObject);
     procedure Button2Click(Sender: TObject);
@@ -65,7 +72,9 @@ end;
 
 procedure TForm3.Button2Click(Sender: TObject);
 begin
- ADOQuery1.Post;
+  DBEdit6.Text := datetostr(datetimepicker1.date);
+  DBEdit10.Text := datetostr(datetimepicker2.date);
+  ADOQuery1.Post;
 end;
 
 procedure TForm3.N1Click(Sender: TObject);
@@ -74,14 +83,31 @@ begin
 end;
 
 procedure TForm3.ViewPersonEdit(id: integer);
+var Stream: TMemoryStream;
+    Jpeg: TJPEGImage;
 begin
   try
+    Stream := TMemoryStream.Create();
+    Jpeg := TJPEGImage.Create();
     ADOQuery1.Parameters.ParamByName('Id').Value := id;
     ADOQuery1.Open;
+    datetimepicker1.date := ADOQuery1.FieldByName('Pe_DateOfBirth').Value;
+    datetimepicker2.date := ADOQuery1.FieldByName('Pe_DateOnWork').Value;
     Form3.Caption := Form3.Caption + IntToStr(ADOQuery1.FieldByName('Pe_Id').Value);
     Form3.Show;
-  except
-
+    NetHTTPClient1.Get(ADOQuery1.FieldByName('Pe_Photo').Value, Stream);
+    Stream.Position := 0;
+    if pos('.jpg',ADOQuery1.FieldByName('Pe_Photo').Value) <> 0 then
+    begin
+      jpeg.LoadFromStream(Stream);
+      Image1.Picture.Assign(jpeg);
+    end
+    else
+    begin
+      Image1.Picture.LoadFromStream(Stream)
+    end;
+    Finally
+      FreeAndNil(Stream);
   end;
 end;
 
@@ -91,6 +117,8 @@ begin
     Form3.Caption := 'Реєстрація нового працівника';
     Button2.Visible := True;
     Button1.Visible := False;
+    DBEdit11.Visible := True;
+    Label12.Visible := True;
     ADOQuery1.Active := True;
     Form3.Show;
   except

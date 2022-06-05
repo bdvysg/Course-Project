@@ -2,8 +2,8 @@ object SalesListForm: TSalesListForm
   Left = 0
   Top = 0
   Caption = #1050#1072#1090#1072#1083#1086#1075' '#1095#1077#1082#1110#1074
-  ClientHeight = 615
-  ClientWidth = 719
+  ClientHeight = 628
+  ClientWidth = 620
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -16,8 +16,8 @@ object SalesListForm: TSalesListForm
   object DBGrid1: TDBGrid
     Left = 0
     Top = 0
-    Width = 719
-    Height = 615
+    Width = 620
+    Height = 628
     Align = alClient
     DataSource = DataSource1
     TabOrder = 0
@@ -38,14 +38,21 @@ object SalesListForm: TSalesListForm
         Expanded = False
         FieldName = 'PM_Name'
         Title.Caption = #1042#1080#1076' '#1086#1087#1083#1072#1090#1080
-        Width = 111
+        Width = 172
         Visible = True
       end
       item
         Expanded = False
         FieldName = 'SL_Date'
         Title.Caption = #1044#1072#1090#1072' '#1087#1088#1086#1074#1077#1076#1077#1085#1085#1103
-        Width = 142
+        Width = 204
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'Summa'
+        Title.Caption = #1057#1091#1084#1072
+        Width = 106
         Visible = True
       end>
   end
@@ -72,9 +79,13 @@ object SalesListForm: TSalesListForm
         Value = Null
       end>
     SQL.Strings = (
-      'select * from Sales'
+      
+        'select distinct SL_Id, sl_date, PM_Name, SUM(STL_Amount * Tov_Pr' +
+        'ice) over (partition by sl_id) as Summa from Sales'
       'inner join PayMethod on SL_PayMethod = PM_Id'
-      'where SL_Place = :ID')
+      'inner join SalesTovList on SL_Id = STL_Doc'
+      'inner join Tovar on STL_Tovar = Tov_Id'
+      'where SL_Place = :id')
     Left = 448
     Top = 296
   end

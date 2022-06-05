@@ -66,6 +66,7 @@ procedure TSalesListForm.SalesListView(id: integer);
 begin
   ADOQuery1.Parameters.ParamByName('ID').Value := id;
   ADOQuery1.Open;
+  TNumericField(ADOQuery1.FieldByName('Summa')).DisplayFormat := '0 грн.';
   SalesListForm.show;
 end;
 

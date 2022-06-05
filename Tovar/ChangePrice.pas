@@ -67,7 +67,10 @@ begin
   ADOQuery3.Sql.Add(Filter);
   ADOQuery3.Parameters.ParamByName('Percent').Value := strtoint(Edit1.Text);
   ADOQuery3.ExecSQL();
-  ShowMessage('Оновленно - ' + inttostr(DBGrid1.SelectedRows.Count) + ' товарів');
+  if RadioGroup1.ItemIndex = 0 then
+    ShowMessage('Оновленно - ' + inttostr(ADOQuery1.RecordCount) + ' товарів');
+  if RadioGroup1.ItemIndex = 1 then
+    ShowMessage('Оновленно - ' + inttostr(DBGrid1.SelectedRows.Count) + ' товарів');
   ADOQuery1.Refresh;
 end;
 

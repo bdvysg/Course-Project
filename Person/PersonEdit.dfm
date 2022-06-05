@@ -158,6 +158,21 @@ object Form3: TForm3
     Font.Style = []
     ParentFont = False
   end
+  object Image1: TImage
+    Left = 512
+    Top = 38
+    Width = 297
+    Height = 291
+    Stretch = True
+  end
+  object Label12: TLabel
+    Left = 512
+    Top = 338
+    Width = 61
+    Height = 16
+    Caption = #1060#1086#1090#1086' URL:'
+    Visible = False
+  end
   object DBEdit1: TDBEdit
     Left = 256
     Top = 16
@@ -199,7 +214,7 @@ object Form3: TForm3
     Top = 152
     Width = 193
     Height = 24
-    DataField = 'Pe_Gender'
+    DataField = 'Pe_Gender_'
     DataSource = DataSource1
     TabOrder = 4
   end
@@ -226,7 +241,7 @@ object Form3: TForm3
     Top = 254
     Width = 193
     Height = 24
-    DataField = 'Pe_PlaceOfWork'
+    DataField = 'Pl_Name'
     DataSource = DataSource1
     TabOrder = 7
   end
@@ -248,22 +263,14 @@ object Form3: TForm3
     DataSource = DataSource1
     TabOrder = 9
   end
-  object DBImage1: TDBImage
-    Left = 496
-    Top = 16
-    Width = 313
-    Height = 334
-    DataField = 'Pe_Photo'
-    DataSource = DataSource1
-    TabOrder = 10
-  end
   object Button1: TButton
     Left = 455
     Top = 288
     Width = 26
     Height = 28
     Caption = #1056
-    TabOrder = 11
+    TabOrder = 10
+    Visible = False
     OnClick = Button1Click
   end
   object Button2: TButton
@@ -272,8 +279,36 @@ object Form3: TForm3
     Width = 89
     Height = 25
     Caption = #1055#1110#1076#1090#1074#1077#1088#1076#1080#1090#1080
-    TabOrder = 12
+    TabOrder = 11
     OnClick = Button2Click
+  end
+  object DateTimePicker1: TDateTimePicker
+    Left = 256
+    Top = 186
+    Width = 193
+    Height = 28
+    Date = 44697.000000000000000000
+    Time = 0.521281550929416000
+    TabOrder = 12
+  end
+  object DateTimePicker2: TDateTimePicker
+    Left = 256
+    Top = 322
+    Width = 193
+    Height = 24
+    Date = 44697.000000000000000000
+    Time = 0.522539479163242500
+    TabOrder = 13
+  end
+  object DBEdit11: TDBEdit
+    Left = 579
+    Top = 335
+    Width = 230
+    Height = 24
+    DataField = 'Pe_Photo'
+    DataSource = DataSource1
+    TabOrder = 14
+    Visible = False
   end
   object ADOQuery1: TADOQuery
     ConnectionString = 
@@ -294,7 +329,11 @@ object Form3: TForm3
         Value = Null
       end>
     SQL.Strings = (
-      'select * from Person where Pe_Id = :Id')
+      
+        'select *,case Pe_Gender when '#39'F'#39' then '#39#1078#1110#1085#1086#1095#1072#39' when '#39'M'#39' then '#39#1095#1086 +
+        #1083#1086#1074#1110#1095#1072#39' end as Pe_Gender_ from Person'
+      'inner join Place on Pe_PlaceOfWork = Pl_Id'
+      'where Pe_Id = :Id')
     Left = 248
     Top = 352
   end
@@ -310,5 +349,10 @@ object Form3: TForm3
       Caption = #1054#1085#1086#1074#1080#1090#1080
       OnClick = N1Click
     end
+  end
+  object NetHTTPClient1: TNetHTTPClient
+    UserAgent = 'Embarcadero URI Client/1.0'
+    Left = 480
+    Top = 8
   end
 end
